@@ -1,0 +1,131 @@
+
+
+.hero {
+    height: 90vh;
+    position: relative;
+    text-align: center;
+    color:white;
+    background: url("/assets/img1.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero button {
+    margin-top: 15px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background-color: #ff6f61;
+    transform: scale(1.05);
+}
+
+
+.welcome {
+    display: flex;
+   
+    padding: 70px;
+    gap: 40px;
+   
+}
+
+.welcome-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.welcome-img:hover {
+    transform: scale(1.05);
+}
+
+
+.offer {
+    height: 70vh;
+    padding: 60px;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    background: url("/assets/img6.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.student {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 70px;
+    gap: 50px;
+    justify-content: center;
+    background-color:white;
+}
+
+.student-img {
+    width: 30%;
+    max-width: 300px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.student-img:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    width: 45%;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px  black
+}
+
+.card img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+@media (max-width: 992px) {
+    .welcome, .student, .offer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card, .student-img, .welcome-img {
+        width: 100%;
+    }
+
+    
+}
