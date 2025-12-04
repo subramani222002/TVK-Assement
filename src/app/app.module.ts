@@ -19,7 +19,7 @@ import { TestingAssignmentComponent } from './testing-assignment/testing-assignm
 @NgModule({
   declarations: [
     AppComponent,
-    AssessmentPlatformComponent
+    AssessmentPlatformComponent,
     ContactComponent,
     HomeComponent,
     FullStackAssignmentComponent,

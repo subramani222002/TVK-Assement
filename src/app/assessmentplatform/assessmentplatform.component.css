@@ -4,7 +4,8 @@
    height: 200px; 
   background-image: url(../../assets/assesspf/terms.jpeg);
  background-size: cover;
- /* background-position: top;  */
+  background-position: center;
+
 
 }
 .head {
@@ -14,6 +15,7 @@
     margin-bottom: 20px;
     padding-right: 100px;
     padding-top: 50px;
+     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
  
 }
 .main{
@@ -47,17 +49,43 @@ p{
 }
 #continueBtn{
     text-align: center;
-    margin-top: 20px;
-    margin-left: 600px;
-    border-radius: 30px;
-    height:40px;
-    width: 140px;
-    background-color: black;
-    color: white;
-    cursor: pointer;
+   display: block;
+  margin: 30px auto;
+  border-radius: 25px;
+  height: 45px;
+  width: 160px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 .lastline{
     padding-left: 300px;
     padding-top: 10px;
 
+} 
+
+@media (max-width: 768px) {
+  .head {
+    font-size: 32px;
+    padding-right: 20px;
+  }
+
+  h3, p, .ins, .agree-text, .lastline {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #continueBtn {
+    width: 80%;
+  }
 }
+#continueBtn:hover {
+  transform: scale(1.05);
+}
+
+
+
+
