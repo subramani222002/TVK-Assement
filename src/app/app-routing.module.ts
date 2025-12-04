@@ -11,7 +11,6 @@ import { TestingAssignmentComponent } from './testing-assignment/testing-assignm
 
 const routes: Routes = [
   { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: 'contact', pathMatch: 'full' },
    {path:'',component:HomeComponent},
    {path:'fullstack',component:FullStackAssignmentComponent},
   {path:'frontend',component:FrontEndAssignmentComponent},
