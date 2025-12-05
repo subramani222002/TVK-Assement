@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FrontEndAssignmentComponent {
 
+  heding = 'blue';
+   questionColor = 'green';
 }

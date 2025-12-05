@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./testing-assignment.component.css']
 })
 export class TestingAssignmentComponent {
-
+ heding = 'blue';
+ questionColor = 'green';
 }

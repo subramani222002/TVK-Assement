@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./python-assignment.component.css']
 })
 export class PythonAssignmentComponent {
-
+ heding = 'blue';
+ questionColor = 'green';
 }

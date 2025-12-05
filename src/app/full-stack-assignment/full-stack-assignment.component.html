@@ -1,85 +1,91 @@
-<h1>Online Full Stack Assignment</h1>
-<h2>Multiple Choice Questions</h2>
+<div class="response-saved-modal-overlay" *ngIf="showResponseSaved">
+    <div class="response-saved-modal">
+        <div class="check-icon">
+            <svg viewBox="0 0 100 100" class="checkmark-svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#689f38" stroke-width="5"></circle>
+                <path d="M 28 50 L 45 65 L 75 35" fill="none" stroke="#689f38" stroke-width="5" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <div class="response-text">Response Saved</div>
+    </div>
+</div>
 
+<div class="quiz-container">
+    
+    <div class="header-bar">
+        <div class="nav-area">
+            <span class="logo-text">{{username}}</span>
+        </div>
+        
+        <div class="status-area">
+            <span>{{ timerHours | number:'2.0' }}</span> Hrs :
+            <span>{{ timerMinutes | number:'2.0' }}</span> Min :
+            <span>{{ timerSeconds | number:'2.0' }}</span> Sec
+            | 
+            <span class="nav-text" (click)="prevQuestion()" [class.disabled]="currentPage === 1">
+                &lt; Prev
+            </span> 
+            {{ currentQuestionIndex }}/{{ totalQuestions }} 
+            <span class="nav-text" (click)="nextQuestion()" [class.disabled]="currentPage === totalPages">
+                Next &gt;
+            </span>
+        </div>
+    </div>
+    
+    <div class="content-area" *ngIf="currentQuestion">
+        
+        <div class="statement-panel">
+            <div class="panel-heading">Statement</div>
+            
+            <div class="question-container">
+                <p class="question-text">
+                   {{currentPage}}.{{ currentQuestion.question }}
+                </p>
+            </div>
+            
+            <div class="feedback-section">
+      
+            </div>
+        </div>
 
-<p>1. Which technology is used to build the structure of a web page?</p>
-<ul>
-    <li><input type="radio" name="q1">CSS</li>
-    <li><input type="radio" name="q1">JavaScript</li>
-    <li><input type="radio" name="q1">HTML</li>
-    <li><input type="radio" name="q1">SQL</li>
-</ul>
+        <div class="options-panel">
+            <div class="panel-heading">Select one of the following options:</div>
+            
+            <div class="options-list">
+                <div 
+                    *ngFor="let option of currentQuestion.options" 
+                    class="option-card"
+                    [class.selected]="selectedAnswer[currentQuestion.id] === option"
+                    (click)="selectOption(option)">
+                    
+                    <span class="radio-indicator"></span>
+                    <div class="option-text">{{ option }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="footer-actions">
 
-<p>2. Which framework is used for building single-page applications?</p>
-<ul>
-    <li><input type="radio" name="q2">Angular</li>
-    <li><input type="radio" name="q2">Java</li>
-    <li><input type="radio" name="q2">MySQL</li>
-    <li><input type="radio" name="q2">Spring</li>
-</ul>
+  <button 
+    class="action-button prev-button"
+    (click)="prevQuestion()"
+    *ngIf="currentPage > 1">
+    Prev
+  </button>
 
-<p>3. Which framework is commonly used for building REST APIs in Java?</p>
-<ul>
-    <li><input type="radio" name="q3">React</li>
-    <li><input type="radio" name="q3">Spring Boot</li>
-    <li><input type="radio" name="q3">Bootstrap</li>
-    <li><input type="radio" name="q3">Django</li>
-</ul>
+  <button 
+    class="action-button next-button"
+    (click)="nextQuestion()"
+    *ngIf="currentPage < totalPages">
+    Next
+  </button>
 
-<p>4. Which HTTP method is used to create new data in a REST API?</p>
-<ul>
-    <li><input type="radio" name="q4">GET</li>
-    <li><input type="radio" name="q4">POST</li>
-    <li><input type="radio" name="q4">DELETE</li>
-    <li><input type="radio" name="q4">PUT</li>
-</ul>
+  <button 
+    class="action-button submit-button"
+    (click)="submitAssignment()"
+    *ngIf="currentPage === totalPages">
+    Submit
+  </button>
 
-
-<p>5. Which database language is used to store and retrieve relational data?</p>
-<ul>
-    <li><input type="radio" name="q5">HTML</li>
-    <li><input type="radio" name="q5">SQL</li>
-    <li><input type="radio" name="q5">CSS</li>
-    <li><input type="radio" name="q5">JDBC</li>
-</ul>
-
-<p>6. Which command is used to select all records from a table?</p>
-<ul>
-    <li><input type="radio" name="q6">SELECT * FROM table_name;</li>
-    <li><input type="radio" name="q6">FETCH ALL table_name;</li>
-    <li><input type="radio" name="q6">GET table_name;</li>
-    <li><input type="radio" name="q6">SHOW table_name;</li>
-</ul> 
-
-
-<p>7. What is the role of a REST API?</p>
-<ul>
-    <li><input type="radio" name="q7">Store images</li>
-    <li><input type="radio" name="q7">Connect front-end to back-end</li>
-    <li><input type="radio" name="q7">Design UI</li>
-    <li><input type="radio" name="q7">Compile code</li>
-</ul>
-
-<p>8. Which of the following is used to connect Java applications to a database?</p>
-<ul>
-    <li><input type="radio" name="q8">JDBC</li>
-    <li><input type="radio" name="q8">HTML</li>
-    <li><input type="radio" name="q8">CSS</li>
-    <li><input type="radio" name="q8">Photoshop</li>
-</ul>
-
-<p>9. Which platform is commonly used to deploy full-stack applications?</p>
-<ul>
-    <li><input type="radio" name="q9">GitHub Pages</li>
-    <li><input type="radio" name="q9">Heroku</li>
-    <li><input type="radio" name="q9">Spring Tool Suite</li>
-    <li><input type="radio" name="q9">VS Code</li>
-</ul>
-
-<p>10. Which tool is used for version control in full-stack development?</p>
-<ul>
-    <li><input type="radio" name="q10">Git</li>
-    <li><input type="radio" name="q10">MS Word</li>
-    <li><input type="radio" name="q10">Chrome</li>
-    <li><input type="radio" name="q10">Notepad</li>
-</ul>
+</div>
+</div>
