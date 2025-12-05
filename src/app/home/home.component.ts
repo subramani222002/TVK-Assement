@@ -11,7 +11,7 @@ export class HomeComponent {
  constructor(private router: Router) {}
 
   start() {
-    this.router.navigate(['/assessment']);  
+    this.router.navigate(['ass']);  
   }
 
   title:string='Online Assessment for College Students';

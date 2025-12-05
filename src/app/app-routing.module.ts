@@ -8,6 +8,8 @@ import { BackEndAssignmentComponent } from './back-end-assignment/back-end-assig
 import { JavaAssignmentComponent } from './java-assignment/java-assignment.component';
 import { PythonAssignmentComponent } from './python-assignment/python-assignment.component';
 import { TestingAssignmentComponent } from './testing-assignment/testing-assignment.component';
+import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
+import { TestLinksComponent } from './test-links/test-links.component';
 
 const routes: Routes = [
   { path: 'contact', component: ContactComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:'java',component:JavaAssignmentComponent},
   {path:'python',component:PythonAssignmentComponent},
   {path:'testing',component:TestingAssignmentComponent},
+  {path:"ass",component:AssessmentplatformComponent},
+  {path:"testlink",component:TestLinksComponent},
 
   
 ];

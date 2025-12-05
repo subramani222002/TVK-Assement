@@ -14,10 +14,13 @@ import { BackEndAssignmentComponent } from './back-end-assignment/back-end-assig
 import { JavaAssignmentComponent } from './java-assignment/java-assignment.component';
 import { PythonAssignmentComponent } from './python-assignment/python-assignment.component';
 import { TestingAssignmentComponent } from './testing-assignment/testing-assignment.component';
+import { TestLinksComponent } from './test-links/test-links.component';
+import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AssessmentplatformComponent,
     ContactComponent,
     HomeComponent,
     FullStackAssignmentComponent,
@@ -25,7 +28,8 @@ import { TestingAssignmentComponent } from './testing-assignment/testing-assignm
     BackEndAssignmentComponent,
     JavaAssignmentComponent,
     PythonAssignmentComponent,
-    TestingAssignmentComponent
+    TestingAssignmentComponent,
+    TestLinksComponent
   ],
   imports: [
     BrowserModule,
