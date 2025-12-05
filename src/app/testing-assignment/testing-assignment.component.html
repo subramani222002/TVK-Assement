@@ -1,83 +1,486 @@
-<h1>Online Software Testing Assignment</h1>
+<h1 [ngStyle]="{ 'color': heding }">Online Software Testing Assignment</h1>
 <h2>Multiple Choice Questions</h2>
 
-<p>1. What is the main purpose of software testing?</p>
-<ul>
-    <li><input type="radio" name="q1">To find defects</li>
-    <li><input type="radio" name="q1">To write code</li>
-    <li><input type="radio" name="q1">To develop UI</li>
-    <li><input type="radio" name="q1">To deploy the project</li>
+<p [ngStyle]="{'color': questionColor}">1. What is the main purpose of software testing?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q1">To find defects</li>
+    <li><input type="checkbox" name="q1">To write code</li>
+    <li><input type="checkbox" name="q1">To develop UI</li>
+    <li><input type="checkbox" name="q1">To deploy the project</li></div>
 </ul>
 
-<p>2. Which testing is done without executing the code?</p>
-<ul>
-    <li><input type="radio" name="q2">Black Box Testing</li>
-    <li><input type="radio" name="q2">White Box Testing</li>
-    <li><input type="radio" name="q2">Static Testing</li>
-    <li><input type="radio" name="q2">Unit Testing</li>
+<p [ngStyle]="{'color': questionColor}">2. Which testing is done without executing the code?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q2">Black Box Testing</li>
+    <li><input type="checkbox" name="q2">White Box Testing</li>
+    <li><input type="checkbox" name="q2">Static Testing</li>
+    <li><input type="checkbox" name="q2">Unit Testing</li></div>
 </ul>
 
-<p>3. Which type of testing checks individual components of code?</p>
-<ul>
-    <li><input type="radio" name="q3">Integration Testing</li>
-    <li><input type="radio" name="q3">Unit Testing</li>
-    <li><input type="radio" name="q3">System Testing</li>
-    <li><input type="radio" name="q3">Performance Testing</li>
+<p [ngStyle]="{'color': questionColor}">3. Which type of testing checks individual components of code?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q3">Integration Testing</li>
+    <li><input type="checkbox" name="q3">Unit Testing</li>
+    <li><input type="checkbox" name="q3">System Testing</li>
+    <li><input type="checkbox" name="q3">Performance Testing</li></div>
 </ul>
 
-<p>4. Which testing technique focuses on the external behavior of the software?</p>
-<ul>
-    <li><input type="radio" name="q4">Black Box Testing</li>
-    <li><input type="radio" name="q4">White Box Testing</li>
-    <li><input type="radio" name="q4">Alpha Testing</li>
-    <li><input type="radio" name="q4">Beta Testing</li>
+<p [ngStyle]="{'color': questionColor}">4. Which testing technique focuses on the external behavior of the software?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q4">Black Box Testing</li>
+    <li><input type="checkbox" name="q4">White Box Testing</li>
+    <li><input type="checkbox" name="q4">Alpha Testing</li>
+    <li><input type="checkbox" name="q4">Beta Testing</li></div>
 </ul>
 
-<p>5. Which of the following is a test automation tool?</p>
-<ul>
-    <li><input type="radio" name="q5">Selenium</li>
-    <li><input type="radio" name="q5">MS Word</li>
-    <li><input type="radio" name="q5">Photoshop</li>
-    <li><input type="radio" name="q5">Notepad</li>
+<p [ngStyle]="{'color': questionColor}">5. Which of the following is a test automation tool?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q5">Selenium</li>
+    <li><input type="checkbox" name="q5">MS Word</li>
+    <li><input type="checkbox" name="q5">Photoshop</li>
+    <li><input type="checkbox" name="q5">Notepad</li></div>
 </ul>
 
-<p>6. What is the first step in the Software Testing Life Cycle (STLC)?</p>
-<ul>
-    <li><input type="radio" name="q6">Test Planning</li>
-    <li><input type="radio" name="q6">Requirement Analysis</li>
-    <li><input type="radio" name="q6">Test Case Execution</li>
-    <li><input type="radio" name="q6">Defect Reporting</li>
+<p [ngStyle]="{'color': questionColor}">6. What is the first step in the Software Testing Life Cycle (STLC)?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q6">Test Planning</li>
+    <li><input type="checkbox" name="q6">Requirement Analysis</li>
+    <li><input type="checkbox" name="q6">Test Case Execution</li>
+    <li><input type="checkbox" name="q6">Defect Reporting</li></div>
 </ul>
 
-<p>7. When a tester finds a bug, what is the next step?</p>
-<ul>
-    <li><input type="radio" name="q7">Fix the bug</li>
-    <li><input type="radio" name="q7">Delete the bug</li>
-    <li><input type="radio" name="q7">Report the defect</li>
-    <li><input type="radio" name="q7">Ignore it</li>
+<p [ngStyle]="{'color': questionColor}">7. When a tester finds a bug, what is the next step?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q7">Fix the bug</li>
+    <li><input type="checkbox" name="q7">Delete the bug</li>
+    <li><input type="checkbox" name="q7">Report the defect</li>
+    <li><input type="checkbox" name="q7">Ignore it</li></div>
 </ul>
 
-<p>8. Which status indicates that the developer has fixed the bug?</p>
-<ul>
-    <li><input type="radio" name="q8">Open</li>
-    <li><input type="radio" name="q8">Closed</li>
-    <li><input type="radio" name="q8">Rejected</li>
-    <li><input type="radio" name="q8">Resolved</li>
+<p [ngStyle]="{'color': questionColor}">8. Which status indicates that the developer has fixed the bug?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q8">Open</li>
+    <li><input type="checkbox" name="q8">Closed</li>
+    <li><input type="checkbox" name="q8">Rejected</li>
+    <li><input type="checkbox" name="q8">Resolved</li></div>
 </ul>
 
-<p>9. Which testing checks how fast the system responds?</p>
-<ul>
-    <li><input type="radio" name="q9">Security Testing</li>
-    <li><input type="radio" name="q9">Performance Testing</li>
-    <li><input type="radio" name="q9">Usability Testing</li>
-    <li><input type="radio" name="q9">Compatibility Testing</li>
+<p [ngStyle]="{'color': questionColor}">9. Which testing checks how fast the system responds?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q9">Security Testing</li>
+    <li><input type="checkbox" name="q9">Performance Testing</li>
+    <li><input type="checkbox" name="q9">Usability Testing</li>
+    <li><input type="checkbox" name="q9">Compatibility Testing</li></div>
 </ul>
 
-<p>10. Which testing ensures that the application is protected from threats?</p>
-<ul>
-    <li><input type="radio" name="q10">Functional Testing</li>
-    <li><input type="radio" name="q10">Security Testing</li>
-    <li><input type="radio" name="q10">Alpha Testing</li>
-    <li><input type="radio" name="q10">Regression Testing</li>
+<p [ngStyle]="{'color': questionColor}">10. Which testing ensures that the application is protected from threats?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q10">Functional Testing</li>
+    <li><input type="checkbox" name="q10">Security Testing</li>
+    <li><input type="checkbox" name="q10">Alpha Testing</li>
+    <li><input type="checkbox" name="q10">Regression Testing</li></div>
+</ul>
+<p [ngStyle]="{'color': questionColor}">11. Which testing is performed first?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q11">Unit Testing</li>
+    <li><input type="checkbox" name="q11">System Testing</li>
+    <li><input type="checkbox" name="q11">Regression Testing</li>
+    <li><input type="checkbox" name="q11">Beta Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">12. What does Bug Life Cycle describe?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q12">Order of food items</li>
+    <li><input type="checkbox" name="q12">Stages of a defect</li>
+    <li><input type="checkbox" name="q12">Project budget</li>
+    <li><input type="checkbox" name="q12">Team hierarchy</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">13. Which testing verifies if new changes break existing features?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q13">Smoke Testing</li>
+    <li><input type="checkbox" name="q13">Regression Testing</li>
+    <li><input type="checkbox" name="q13">Alpha Testing</li>
+    <li><input type="checkbox" name="q13">Static Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">14. Which testing is done by end users?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q14">Alpha Testing</li>
+    <li><input type="checkbox" name="q14">Beta Testing</li>
+    <li><input type="checkbox" name="q14">Unit Testing</li>
+    <li><input type="checkbox" name="q14">Load Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">15. Which test ensures that the core functionality works?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q15">Smoke Testing</li>
+    <li><input type="checkbox" name="q15">Stress Testing</li>
+    <li><input type="checkbox" name="q15">Volume Testing</li>
+    <li><input type="checkbox" name="q15">Compatibility Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">16. Which document contains the test strategy?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q16">Requirement Document</li>
+    <li><input type="checkbox" name="q16">Test Plan</li>
+    <li><input type="checkbox" name="q16">Release Notes</li>
+    <li><input type="checkbox" name="q16">Design Document</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">17. Which testing checks the entire application?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q17">Unit Testing</li>
+    <li><input type="checkbox" name="q17">System Testing</li>
+    <li><input type="checkbox" name="q17">Smoke Testing</li>
+    <li><input type="checkbox" name="q17">Component Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">18. Which testing checks user friendliness?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q18">Usability Testing</li>
+    <li><input type="checkbox" name="q18">Load Testing</li>
+    <li><input type="checkbox" name="q18">Security Testing</li>
+    <li><input type="checkbox" name="q18">Spike Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">19. What is the final stage of STLC?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q19">Test Closure</li>
+    <li><input type="checkbox" name="q19">Test Planning</li>
+    <li><input type="checkbox" name="q19">Defect Reporting</li>
+    <li><input type="checkbox" name="q19">Analysis</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">20. Which testing validates the performance under heavy load?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q20">Load Testing</li>
+    <li><input type="checkbox" name="q20">Alpha Testing</li>
+    <li><input type="checkbox" name="q20">Unit Testing</li>
+    <li><input type="checkbox" name="q20">Adhoc Testing</li></div>
+</ul>
+
+<!-- 21 to 60 generated below -->
+
+<p [ngStyle]="{'color': questionColor}">21. Which testing verifies installation and setup?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q21">Installation Testing</li>
+    <li><input type="checkbox" name="q21">Unit Testing</li>
+    <li><input type="checkbox" name="q21">Alpha Testing</li>
+    <li><input type="checkbox" name="q21">Boundary Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">22. What is another name for Adhoc Testing?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q22">Random Testing</li>
+    <li><input type="checkbox" name="q22">Unit Testing</li>
+    <li><input type="checkbox" name="q22">Stress Testing</li>
+    <li><input type="checkbox" name="q22">Security Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">23. Which testing focuses on boundary values?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q23">Boundary Value Testing</li>
+    <li><input type="checkbox" name="q23">Smoke Testing</li>
+    <li><input type="checkbox" name="q23">Alpha Testing</li>
+    <li><input type="checkbox" name="q23">System Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">24. Which testing is performed without any planning?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q24">Adhoc Testing</li>
+    <li><input type="checkbox" name="q24">Usability Testing</li>
+    <li><input type="checkbox" name="q24">Load Testing</li>
+    <li><input type="checkbox" name="q24">Regression Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">25. Which testing ensures compatibility across browsers?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q25">Compatibility Testing</li>
+    <li><input type="checkbox" name="q25">Volume Testing</li>
+    <li><input type="checkbox" name="q25">Stress Testing</li>
+    <li><input type="checkbox" name="q25">Alpha Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">26. Which test verifies the correct flow of data between modules?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q26">Integration Testing</li>
+    <li><input type="checkbox" name="q26">Unit Testing</li>
+    <li><input type="checkbox" name="q26">Load Testing</li>
+    <li><input type="checkbox" name="q26">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">27. Which test includes repeating the same test many times?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q27">Repetitive Testing</li>
+    <li><input type="checkbox" name="q27">Regression Testing</li>
+    <li><input type="checkbox" name="q27">Unit Testing</li>
+    <li><input type="checkbox" name="q27">Acceptance Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">28. Which testing is done after a fix?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q28">Re-Testing</li>
+    <li><input type="checkbox" name="q28">Smoke Testing</li>
+    <li><input type="checkbox" name="q28">Alpha Testing</li>
+    <li><input type="checkbox" name="q28">Volume Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">29. Which document stores test cases?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q29">Test Case Document</li>
+    <li><input type="checkbox" name="q29">Design Document</li>
+    <li><input type="checkbox" name="q29">User Manual</li>
+    <li><input type="checkbox" name="q29">Wireframe</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">30. Which testing checks validity of input fields?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q30">Validation Testing</li>
+    <li><input type="checkbox" name="q30">Volume Testing</li>
+    <li><input type="checkbox" name="q30">Alpha Testing</li>
+    <li><input type="checkbox" name="q30">Smoke Testing</li></div>
+</ul>
+
+<!-- Continue until question 60 -->
+
+<p [ngStyle]="{'color': questionColor}">31. Which testing verifies recovery after failure?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q31">Recovery Testing</li>
+    <li><input type="checkbox" name="q31">Alpha Testing</li>
+    <li><input type="checkbox" name="q31">Unit Testing</li>
+    <li><input type="checkbox" name="q31">Regression Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">32. Which testing checks large data handling?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q32">Volume Testing</li>
+    <li><input type="checkbox" name="q32">Unit Testing</li>
+    <li><input type="checkbox" name="q32">Stress Testing</li>
+    <li><input type="checkbox" name="q32">Boundary Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">33. Which testing checks extreme conditions?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q33">Stress Testing</li>
+    <li><input type="checkbox" name="q33">Unit Testing</li>
+    <li><input type="checkbox" name="q33">User Testing</li>
+    <li><input type="checkbox" name="q33">Smoke Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">34. Which testing checks quick and basic functionalities?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q34">Sanity Testing</li>
+    <li><input type="checkbox" name="q34">Volume Testing</li>
+    <li><input type="checkbox" name="q34">Load Testing</li>
+    <li><input type="checkbox" name="q34">Acceptance Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">35. Which testing checks if the application meets client needs?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q35">Acceptance Testing</li>
+    <li><input type="checkbox" name="q35">Regression Testing</li>
+    <li><input type="checkbox" name="q35">Unit Testing</li>
+    <li><input type="checkbox" name="q35">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">36. Which testing verifies the speed of operations?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q36">Performance Testing</li>
+    <li><input type="checkbox" name="q36">Alpha Testing</li>
+    <li><input type="checkbox" name="q36">Unit Testing</li>
+    <li><input type="checkbox" name="q36">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">37. Which testing is manually performed without tools?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q37">Manual Testing</li>
+    <li><input type="checkbox" name="q37">Automation Testing</li>
+    <li><input type="checkbox" name="q37">Load Testing</li>
+    <li><input type="checkbox" name="q37">Volume Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">38. Which testing checks internal code structure?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q38">White Box Testing</li>
+    <li><input type="checkbox" name="q38">Black Box Testing</li>
+    <li><input type="checkbox" name="q38">Adhoc Testing</li>
+    <li><input type="checkbox" name="q38">Stress Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">39. Which testing is based on requirements?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q39">Functional Testing</li>
+    <li><input type="checkbox" name="q39">Unit Testing</li>
+    <li><input type="checkbox" name="q39">Load Testing</li>
+    <li><input type="checkbox" name="q39">Regression Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">40. Which testing validates non-functional aspects?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q40">Non-Functional Testing</li>
+    <li><input type="checkbox" name="q40">Unit Testing</li>
+    <li><input type="checkbox" name="q40">Adhoc Testing</li>
+    <li><input type="checkbox" name="q40">Smoke Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">41. Which testing verifies the UI?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q41">GUI Testing</li>
+    <li><input type="checkbox" name="q41">Load Testing</li>
+    <li><input type="checkbox" name="q41">Adhoc Testing</li>
+    <li><input type="checkbox" name="q41">Volume Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">42. Which test checks correct database operations?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q42">Database Testing</li>
+    <li><input type="checkbox" name="q42">Regression Testing</li>
+    <li><input type="checkbox" name="q42">Unit Testing</li>
+    <li><input type="checkbox" name="q42">Stress Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">43. Which testing ensures that modules communicate properly?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q43">Integration Testing</li>
+    <li><input type="checkbox" name="q43">Unit Testing</li>
+    <li><input type="checkbox" name="q43">Volume Testing</li>
+    <li><input type="checkbox" name="q43">Smoke Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">44. Which testing checks system behavior under real conditions?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q44">End to End Testing</li>
+    <li><input type="checkbox" name="q44">Unit Testing</li>
+    <li><input type="checkbox" name="q44">Smoke Testing</li>
+    <li><input type="checkbox" name="q44">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">45. Which testing checks application stability?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q45">Stability Testing</li>
+    <li><input type="checkbox" name="q45">Unit Testing</li>
+    <li><input type="checkbox" name="q45">Volume Testing</li>
+    <li><input type="checkbox" name="q45">Stress Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">46. Which testing verifies error-handling?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q46">Error Testing</li>
+    <li><input type="checkbox" name="q46">Load Testing</li>
+    <li><input type="checkbox" name="q46">Alpha Testing</li>
+    <li><input type="checkbox" name="q46">Boundary Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">47. Which testing checks whether all fields are displayed correctly?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q47">Field Testing</li>
+    <li><input type="checkbox" name="q47">Unit Testing</li>
+    <li><input type="checkbox" name="q47">Volume Testing</li>
+    <li><input type="checkbox" name="q47">Smoke Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">48. Which testing verifies search functionality?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q48">Search Testing</li>
+    <li><input type="checkbox" name="q48">Unit Testing</li>
+    <li><input type="checkbox" name="q48">Load Testing</li>
+    <li><input type="checkbox" name="q48">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">49. Which testing ensures the app works on different devices?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q49">Device Testing</li>
+    <li><input type="checkbox" name="q49">Unit Testing</li>
+    <li><input type="checkbox" name="q49">Alpha Testing</li>
+    <li><input type="checkbox" name="q49">Usability Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">50. Which testing checks the correctness of links?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q50">Link Testing</li>
+    <li><input type="checkbox" name="q50">Smoke Testing</li>
+    <li><input type="checkbox" name="q50">Unit Testing</li>
+    <li><input type="checkbox" name="q50">Regression Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">51. Which testing verifies application navigation?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q51">Navigation Testing</li>
+    <li><input type="checkbox" name="q51">Volume Testing</li>
+    <li><input type="checkbox" name="q51">Load Testing</li>
+    <li><input type="checkbox" name="q51">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">52. Which testing focuses on extreme input values?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q52">Boundary Testing</li>
+    <li><input type="checkbox" name="q52">Unit Testing</li>
+    <li><input type="checkbox" name="q52">Load Testing</li>
+    <li><input type="checkbox" name="q52">Smoke Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">53. Which testing checks workflow?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q53">Workflow Testing</li>
+    <li><input type="checkbox" name="q53">Unit Testing</li>
+    <li><input type="checkbox" name="q53">Stress Testing</li>
+    <li><input type="checkbox" name="q53">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">54. Which testing checks response time?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q54">Performance Testing</li>
+    <li><input type="checkbox" name="q54">Unit Testing</li>
+    <li><input type="checkbox" name="q54">Alpha Testing</li>
+    <li><input type="checkbox" name="q54">Regression Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">55. Which testing verifies login functionality?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q55">Functional Testing</li>
+    <li><input type="checkbox" name="q55">Volume Testing</li>
+    <li><input type="checkbox" name="q55">Load Testing</li>
+    <li><input type="checkbox" name="q55">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">56. Which testing checks multiple users at a time?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q56">Concurrency Testing</li>
+    <li><input type="checkbox" name="q56">Unit Testing</li>
+    <li><input type="checkbox" name="q56">Regression Testing</li>
+    <li><input type="checkbox" name="q56">Stress Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">57. Which testing checks data accuracy?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q57">Data Testing</li>
+    <li><input type="checkbox" name="q57">Volume Testing</li>
+    <li><input type="checkbox" name="q57">Unit Testing</li>
+    <li><input type="checkbox" name="q57">Boundary Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">58. Which testing checks if pages load correctly?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q58">Page Load Testing</li>
+    <li><input type="checkbox" name="q58">Smoke Testing</li>
+    <li><input type="checkbox" name="q58">Alpha Testing</li>
+    <li><input type="checkbox" name="q58">Unit Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">59. Which testing validates workflow from start to end?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q59">End to End Testing</li>
+    <li><input type="checkbox" name="q59">Unit Testing</li>
+    <li><input type="checkbox" name="q59">Load Testing</li>
+    <li><input type="checkbox" name="q59">Adhoc Testing</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">60. Which testing ensures the application works after deployment?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q60">Post Deployment Testing</li>
+    <li><input type="checkbox" name="q60">Unit Testing</li>
+    <li><input type="checkbox" name="q60">Smoke Testing</li>
+    <li><input type="checkbox" name="q60">Regression Testing</li></div>
 </ul>
 
