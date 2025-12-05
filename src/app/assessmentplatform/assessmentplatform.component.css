@@ -1,27 +1,35 @@
-
+.content{
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 .header{
    width: 100%;
    height: 200px; 
-  background-image: url(../../assets/assesspf/terms.jpeg);
+  background-image: url(../../assets/assesspf/header.png);
  background-size: cover;
   background-position: center;
+  margin-top: -50px;
 
 
 }
 .head {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
-    text-align:right;
+    text-align:left;
     margin-bottom: 20px;
-    padding-right: 100px;
     padding-top: 50px;
-     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    color: white;
+    padding-left: 40px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  
  
 }
 .main{
     width: 100%;
     height: auto;
-    background-image: url(../../assets/assesspf/main.jpg);
+    /* background-image: url(../../assets/assesspf/main.jpg); */
+    /* background-image: url("https://tse2.mm.bing.net/th/id/OIP.4jj4VZLQr5qRIyBcU-d7FQHaEK?pid=Api&P=0&h=180"); */
+      background-image: url("https://tse2.mm.bing.net/th/id/OIP.CZZx1NecHO2uO1LO6GsMoAHaFP?pid=Api&P=0&h=180");
     background-size: cover;
     margin-top:-30px;
     margin-bottom:-15px;
@@ -32,9 +40,14 @@
     text-decoration: underline;
     font-size: 30px;
     font-weight: bold;
+    margin-top: 10px;
+    padding-top: 20px;
 }
 h3{
     padding-left: 300px;
+    font-size: 28px;
+  font-weight: 700;
+
 }
 .ins{
     padding-left: 400px;
@@ -45,8 +58,10 @@ p{
 }
 .agree-text{
     padding-top: 20px;
-    padding-left: 500px;
+    padding-left: 600px;
+    
 }
+
 #continueBtn{
     text-align: center;
    display: block;
@@ -63,14 +78,13 @@ p{
 }
 .lastline{
     padding-left: 300px;
-    padding-top: 10px;
-
 } 
+
 
 .warn {
   color: red;
   font-weight: bold;
-  margin-left: 20px;
+  margin-left: 150px;
   margin-top: 5px;
 }
 

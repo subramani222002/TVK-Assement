@@ -21,7 +21,8 @@ const routes: Routes = [
   {path:'python',component:PythonAssignmentComponent},
   {path:'testing',component:TestingAssignmentComponent},
   {path:"ass",component:AssessmentplatformComponent},
-  {path:"testlink",component:TestLinksComponent}
+  {path:"testlink",component:TestLinksComponent},
+
   
 ];
 

@@ -76,14 +76,17 @@
     <p class="agree-text"> 
         
      <input type="checkbox" id="agree" (change)="toggleAgree($event)" >
-     <label for="agree">I agree to the terms and conditions</label></p>
+     <label for="agree">I agree to the terms and conditions</label>
+    
+    </p>
 
       <p class="warn" *ngIf="warnmsg">{{warnmsg}}</p>
 
     <button type="button" id="continueBtn"  (click)="gotoTests()">Continue</button>
     
-    <p class="lastline"><em>By participating in the onpne assessment, students and colleges agree to comply with the above rules and regulations. Non-comppance may result in </em></p>
-    <p class="lastline"><em>penalties or disquapfication.</em></p>
+     <p class="lastline"><em>By participating in the onpne assessment, students and colleges agree to comply with the above rules and regulations. Non-comppance may result in <br> penalties or disquapfication.</em></p>
+    <br><br><br>
+
 
     </div>
     

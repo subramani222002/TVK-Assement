@@ -23,7 +23,7 @@ gotoTests(){
 const checkbox: any = document.getElementById('agree');
 
   if(!checkbox.checked){
-    this.warnmsg="⚠️ Please agree to the Terms & Conditions before continuing!"
+    this.warnmsg="⚠️ Please agree to the Terms & Conditions before continuing! 👆"
     return;
   }
   this.warnmsg = ""
