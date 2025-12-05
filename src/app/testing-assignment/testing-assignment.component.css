@@ -1,6 +1,16 @@
+.main-container{
+    padding :20px;
+}
+.box-body{
+    display: grid;
+    grid-template-columns: repeat(2,0.2fr);
+}
 h1{
     text-align: center;
 }
 ul li{
     list-style: none;
+}
+p{
+    font-size: 20px;
 }
