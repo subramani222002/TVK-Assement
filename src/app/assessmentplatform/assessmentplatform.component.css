@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .content{
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,10 +10,20 @@
  background-size: cover;
   background-position: center;
   margin-top: -50px;
+=======
+
+.header{
+   width: 100%;
+   height: 200px; 
+  background-image: url(../../assets/assesspf/terms.jpeg);
+ background-size: cover;
+  background-position: center;
+>>>>>>> Stashed changes
 
 
 }
 .head {
+<<<<<<< Updated upstream
     font-size: 50px;
     font-weight: bold;
     text-align:left;
@@ -22,14 +33,27 @@
     padding-left: 40px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
   
+=======
+    font-size: 60px;
+    font-weight: bold;
+    text-align:right;
+    margin-bottom: 20px;
+    padding-right: 100px;
+    padding-top: 50px;
+     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+>>>>>>> Stashed changes
  
 }
 .main{
     width: 100%;
     height: auto;
+<<<<<<< Updated upstream
     /* background-image: url(../../assets/assesspf/main.jpg); */
     /* background-image: url("https://tse2.mm.bing.net/th/id/OIP.4jj4VZLQr5qRIyBcU-d7FQHaEK?pid=Api&P=0&h=180"); */
       background-image: url("https://tse2.mm.bing.net/th/id/OIP.CZZx1NecHO2uO1LO6GsMoAHaFP?pid=Api&P=0&h=180");
+=======
+    background-image: url(../../assets/assesspf/main.jpg);
+>>>>>>> Stashed changes
     background-size: cover;
     margin-top:-30px;
     margin-bottom:-15px;
@@ -40,6 +64,7 @@
     text-decoration: underline;
     font-size: 30px;
     font-weight: bold;
+<<<<<<< Updated upstream
     margin-top: 10px;
     padding-top: 20px;
 }
@@ -48,6 +73,11 @@ h3{
     font-size: 28px;
   font-weight: 700;
 
+=======
+}
+h3{
+    padding-left: 300px;
+>>>>>>> Stashed changes
 }
 .ins{
     padding-left: 400px;
@@ -58,10 +88,15 @@ p{
 }
 .agree-text{
     padding-top: 20px;
+<<<<<<< Updated upstream
     padding-left: 600px;
     
 }
 
+=======
+    padding-left: 500px;
+}
+>>>>>>> Stashed changes
 #continueBtn{
     text-align: center;
    display: block;
@@ -78,6 +113,7 @@ p{
 }
 .lastline{
     padding-left: 300px;
+<<<<<<< Updated upstream
 } 
 
 
@@ -89,6 +125,12 @@ p{
 }
 
 
+=======
+    padding-top: 10px;
+
+} 
+
+>>>>>>> Stashed changes
 @media (max-width: 768px) {
   .head {
     font-size: 32px;
