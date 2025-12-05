@@ -1,53 +1,60 @@
-
-    .header {
+/* Navbar */
+.header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: white;
+  background: rgb(174, 205, 240);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
- 
-}
-
-.logo span {
-  font-size: 26px;
+  padding: 0 40px; 
+  height: 100px;
+  box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif;
   font-weight: bold;
-  color: #0b74d1;
 }
-
+.two {
+ height: 100px;
+}
 .nav {
   display: flex;
   gap: 30px;
- 
 }
-
-.nav {
-  font-size: 16px;
+.nav a {
+  font-size: 20px;
   color: black;
   text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
 }
-
 .nav a:hover {
-  text-decoration: none;
-
+  background-color: #149cda;
+  border-radius: 20px;
+  color: rgb(253, 253, 255);
+  transform: translateY(-2px); 
+  padding: 5px 10px; 
 }
-
 .icons {
   display: flex;
-  gap: 20px;
- 
+  gap: 20px; 
+  
 }
-.icons a {
+.icons a { 
   color: black;
   font-size: 18px;
+  transition: color 0.3s, transform 0.2s;
 }
-.icons a:hover {
-  color: skyblue;
+.icons a:hover { 
+  color: rgb(12, 78, 245);
+  transform: scale(1.1);
 }
+
+
+
+
+
+
 .footer {
   background-color: #F4C430;
   padding: 40px 20px;
