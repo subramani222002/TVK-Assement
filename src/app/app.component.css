@@ -158,3 +158,36 @@
     margin-bottom: 30px;
   }
 }
+
+
+/* feedback */
+.mini-chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6b46ff, #ff6b81);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+.mini-chat-box:hover {
+  transform: scale(1.08);
+}
+
+.mini-chat-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.mini-chat-emoji {
+  font-size: 32px;
+  color: white;
+}
