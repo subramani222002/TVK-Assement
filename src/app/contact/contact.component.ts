@@ -21,7 +21,6 @@ export class ContactComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    // Scroll-triggered animations
     const elements = document.querySelectorAll('.fade-in, .jump-in, .scale-in, .rotate-in');
 
     const observer = new IntersectionObserver(entries => {
@@ -29,7 +28,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         } else {
-          entry.target.classList.remove('show'); // optional: remove class when scrolled out
+          entry.target.classList.remove('show'); 
         }
       });
     }, { threshold: 0.2 });
@@ -45,10 +44,8 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
     const data = this.contactForm.value;
 
-    // Save to localStorage
     localStorage.setItem("contactData", JSON.stringify(data));
 
-    // Save to backend (db.json)
     this.http.post("http://localhost:3000/contactRequests", data)
       .subscribe({
         next: () => {
