@@ -1,0 +1,13 @@
+<div class="container">
+  <h2 class="title">Available Tests</h2>
+
+  <div class="grid">
+    <div class="card" *ngFor="let test of tests">
+    <img [src]="test.img" alt="{{test.name}}">
+      <h3>{{ test.name }}</h3>
+
+      <button (click)="openTest(test.link)">Start Test</button>
+    </div>
+  </div>
+</div>
+
