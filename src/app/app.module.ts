@@ -20,6 +20,7 @@ import { AssessmentplatformComponent } from './assessmentplatform/assessmentplat
 // ✅ Correct import (WITH S)
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

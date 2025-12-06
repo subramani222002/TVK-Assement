@@ -60,7 +60,6 @@ export class FeedbacksComponent implements OnInit {
 
   private async botSay(item: any) {
     let text = item.text;
-
     if (this.username && item.id !== 'q0' && item.id !== 'end') {
       text = `Hi ${this.username}, ${text}`;
     }
