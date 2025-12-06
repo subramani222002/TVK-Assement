@@ -1,121 +1,313 @@
+/* ============================= */
+/* 🔥 Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================= */
+/* 🔥 Scroll Animations */
+.fade-in, .jump-in, .scale-in, .rotate-in {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95) rotate(0deg);
+  transition: all 1s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
+/* Jump Animation */
+.jump-in.show {
+  animation: jumpAnim 1s forwards;
+}
+
+@keyframes jumpAnim {
+  0% { opacity: 0; transform: translateY(50px); }
+  50% { transform: translateY(-10px); }
+  70% { transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Scale Animation */
+.scale-in.show {
+  animation: scaleAnim 0.8s forwards;
+}
+
+@keyframes scaleAnim {
+  0% { opacity: 0; transform: scale(0.8); }
+  60% { opacity: 1; transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Rotate + Fade Animation */
+.rotate-in.show {
+  animation: rotateAnim 1s forwards;
+}
+
+@keyframes rotateAnim {
+  0% { opacity: 0; transform: rotate(-15deg) translateY(20px); }
+  100% { opacity: 1; transform: rotate(0deg) translateY(0); }
+}
+
+/* ============================= */
+/* 🔥 Background Section */
+.background-section {
+  position: relative;
+  background-image: url('/assets/images/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px 60px 20px;
+  margin: 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.background-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,255,255,0.2);
+  z-index: -1;
+}
+
+.background-section .heading {
+  margin: 0; padding-bottom: 20px;
+}
+
+/* ============================= */
+/* 🔥 Banner Section */
 .pic {
   position: relative;
-  width: 100%;
-  height: 370px;
+  width: 100%; height: 500px;
+  overflow: hidden;
 }
 
 .pic img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
+  filter: brightness(100%);
+  transition: transform 0.5s ease;
+}
+
+.pic img:hover {
+  transform: scale(1.05);
 }
 
 .pic h1 {
   position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 42px;
-  font-weight: 700;
-  color: white;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  color: #fff;
+  font-size: 50px; font-weight: 800;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+  opacity: 0;
+  animation: fadeSlide 1s forwards;
+  animation-delay: 0.5s;
 }
 
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================= */
+/* 🔥 Heading Section */
 .heading {
   text-align: center;
   padding: 40px 20px;
 }
 
 .heading h2 {
-  font-size: 35px;
-  font-weight: 700;
-  text-decoration: underline dotted;
+  font-size: 40px; font-weight: 800; color: #1d3557;
 }
 
 .heading p {
-  margin-top: 10px;
-  font-size: 19px;
-  color: black;
+  margin-top: 10px; font-size: 25px; color: #555;
 }
 
+/* ============================= */
+/* 🔥 Info Cards */
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(158, 184, 218, 0.9);
+  width: 350px; padding: 35px 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: 0.4s;
+}
+/* ============================= */
+/* 🔥 Info Cards Links */
+.card a {
+  text-decoration: none; /* remove underline */
+  color: inherit;         /* keep original text color */
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #3a0ca3; /* optional hover color */
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 35px rgba(0,0,0,0.25);
+}
+
+.card i {
+  font-size: 40px; color: #3a0ca3;
+  margin-bottom: 15px; display: inline-block;
+  width: 60px; height: 60px; line-height: 60px;
+  background: #fff; border-radius: 50%; transition: 0.3s;
+}
+
+.card:hover i {
+  background: #3a0ca3; color: #fff;
+}
+
+.card h3 {
+  font-size: 27px; font-weight: 700; color: #1d3557;
+}
+
+.card p {
+  margin-top: 8px; font-size: 20px; color: #444;
+}
+
+/* Staggered animation for cards */
+.info-cards .card.show:nth-child(1) { animation-delay: 0.1s; }
+.info-cards .card.show:nth-child(2) { animation-delay: 0.3s; }
+.info-cards .card.show:nth-child(3) { animation-delay: 0.5s; }
+.info-cards .card.show:nth-child(4) { animation-delay: 0.7s; }
+
+/* ============================= */
+/* 🔥 Form + Image Container */
 .container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   gap: 40px;
   padding: 40px;
-  background-color: #ffffff;
+  flex-wrap: wrap;
 }
 
 .form {
-  background: #eef5db;      
-  padding: 30px;
-  width: 420px;
+  background: rgba(158, 184, 218, 0.9);
+  padding: 30px; width: 700px;
   border-radius: 20px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.15);
+  transition: background 0.5s;
+}
+
+.form:hover { background: rgba(114, 163, 189, 0.95); }
+
+.form-title {
+  font-size: 45px; font-weight: 800; margin-bottom: 15px;
+  color: #292a2c; text-align: center; font-family: 'Times New Roman', Times, serif;
 }
 
 .form label {
-  font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 32px; font-weight: 600; display: block; margin-top: 10px; font-family:'Times New Roman', Times, serif;
 }
 
-.form input,
-.form textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #bbbbbb;
-  border-radius: 10px;
-  margin-bottom: 18px;
-  font-size: 15px;
+.required { color: red; font-weight: bold; margin-left: 2px; }
+
+.form input, .form textarea {
+  width: 80%; padding: 14px; margin-top: 5px; margin-bottom: 18px;
+  border-radius: 12px; border: 2px solid transparent;
+  background: #fff; font-size: 18px; transition: 0.3s;
 }
 
-.form textarea {
-  height: 120px;
-  resize: none;
+.form textarea { height: 100px; }
+
+.form input:hover, .form textarea:hover { background: #e0f0ff; }
+
+.form input:focus, .form textarea:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 10px rgba(67,97,238,0.4);
+  background: #d6ecff;
 }
 
 .form button {
-  width: 100%;
-  padding: 12px;
-  background: #1d8a35;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
+  width: 30%; padding: 14px;
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  border: none; border-radius: 35px;
+  color: #fff; font-size: 22px; font-weight: 700;
+  cursor: pointer; transition: 0.3s;
 }
 
 .form button:hover {
-  background: #146c29;
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 25px rgba(86,11,173,0.3);
 }
 
 .form-pic img {
-  width: 600px;
-  height: 400px;
+  width: 680px; height: 700px;
   border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  transition: 0.4s;
 }
 
+.form-pic img:hover { transform: scale(1.05); }
 
+/* ============================= */
+/* 🔥 Info + Map Section */
 .location {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  background: #dcedf7;
-  padding: 40px 30px;
+  gap: 35px;
+  padding: 40px; margin: 40px;
+  background: rgba(158, 184, 218, 0.9);
+  border-radius: 18px;
+  transition: background 0.5s;
 }
+
+.location:hover { background: rgba(122, 149, 179, 0.95); }
 
 .para {
-  width: 50%;
+  width: 50%; height: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px; border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: background 0.4s;
 }
 
-.para h2 {
-  font-size: 32px;
-  text-decoration: underline dotted;
+.para:hover { background: #e6f7ff; }
+
+.para h2 { font-size: 36px; font-weight: 800; }
+.para p { font-size: 25px; margin: 10px 0; color: #444; }
+.para h4 { margin-top: 20px; font-size: 22px; color: #1d3557; }
+
+.para i {
+  margin-right: 10px; color: #3a0ca3; font-size: 20px;
+  display: inline-block; width: 40px; height: 40px;
+  line-height: 40px; text-align: center; border-radius: 50%;
+  background: #d3ebf7; transition: all 0.3s;
 }
+
+.para:hover i { background: #3a0ca3; color: #fff; }
+
+.location .para a {
+  text-decoration: none; color: inherit; transition: color 0.3s;
+}
+
+.location .para a:hover { color: #3a0ca3; }
 
 .map {
-  width: 45%;
+  width: 50%; border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.4s;
 }
+
+.map:hover { transform: scale(1.02); }
+
+.map iframe { width: 100%; height: 660px; border: none; }

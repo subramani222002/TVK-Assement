@@ -1,0 +1,91 @@
+
+
+/* Main Container */
+.container {
+  padding: 40px;
+  background-image: url("../../assets/assesspf/testb.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  color: #222;
+}
+
+/* Two Column Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 2 columns on desktop */
+  gap: 30px;
+  padding: 10px 20px;
+}
+
+/* Mobile View - One Column */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* Mobile = 1 column */
+  }
+}
+
+/* Card */
+  .card {
+  background: rgba(255, 255, 255, 0.2); /* transparent glass */
+  backdrop-filter: blur(12px);          /* blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* soft border */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+  /* width: 80%; */
+  height: 450px;
+  margin: auto;
+}
+
+
+
+
+/* Card Hover */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* Card Image */
+.card img {
+  width: 80%;
+  height: 300px;
+  border-radius: 10px;
+
+}
+
+/* Title inside card */
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.card button {
+  padding: 12px 22px;
+  background: #000;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.card button:hover {
+  background: #333;
+}
