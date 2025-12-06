@@ -8,17 +8,13 @@ import { Router } from '@angular/router';
 })
 export class TestLinksComponent {
     tests = [
-    { name: 'Full Stack Assignment', link: 'fullstack',img:'../../assets/assesspf/full.jpeg' },
-    {name:'Back-End Assignment',link:'backend',img:'../../assets/assesspf/back.jpeg'},
-    { name: 'Java Assignment', link: 'java',img:'../../assets/assesspf/ja.jpeg' },
-    { name: 'Python Assignment', link: 'python',img:'../../assets/assesspf/pyt.jpeg' },
-    {name:'Testing Assignment',link:'testing',img:'../../assets/assesspf/tes.jpeg'},
-    {name:'Front-End Assignment',link:'frontend',img:'../../assets/assesspf/front.jpeg'},
-   
-    // { name: 'JavaScript Test', link: '/js-test',img:'../../assets/assesspf/javascript.jpeg' },
-    // { name: 'Aptitude Test', link: '/apti-test',img:'../../assets/assesspf/frontend.jpeg'},
-    // { name: 'SQL Test', link: '/sql-test',img:'../../assets/assesspf/sql.jpeg' }
-
+    { name: 'Full Stack Assignment', link: 'fullstack',img:'../../assets/assesspf/fullstack.png' },
+    {name:'Back-End Assignment',link:'backend',img:'../../assets/assesspf/backend.png'},
+    {name:'Front-End Assignment',link:'frontend',img:'../../assets/assesspf/frontend.png'},
+    { name: 'Java Assignment', link: 'java',img:'../../assets/assesspf/java.png' },
+    {name:'Testing Assignment',link:'testing',img:'../../assets/assesspf/tetsing.png'},
+    { name: 'Python Assignment', link: 'python',img:'../../assets/assesspf/python.png' },
+    
   ];
 
   constructor(private router: Router) {}

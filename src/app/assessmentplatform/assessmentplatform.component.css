@@ -27,9 +27,7 @@
 .main{
     width: 100%;
     height: auto;
-    /* background-image: url(../../assets/assesspf/main.jpg); */
-    /* background-image: url("https://tse2.mm.bing.net/th/id/OIP.4jj4VZLQr5qRIyBcU-d7FQHaEK?pid=Api&P=0&h=180"); */
-      background-image: url("https://tse2.mm.bing.net/th/id/OIP.CZZx1NecHO2uO1LO6GsMoAHaFP?pid=Api&P=0&h=180");
+    background-image: url("../../assets/assesspf/testb.jpeg");
     background-size: cover;
     margin-top:-30px;
     margin-bottom:-15px;
@@ -58,10 +56,13 @@ p{
 }
 .agree-text{
     padding-top: 20px;
-    padding-left: 600px;
-    
-}
+    padding-left: 500px;
 
+}
+#agree{
+  
+  accent-color:gereen;
+}
 #continueBtn{
     text-align: center;
    display: block;
