@@ -1,480 +1,90 @@
-<h1 [ngStyle]="{ 'color': heding }">Online Front-End Assignment</h1>
-<h2>Multiple Choice Questions</h2>
+<div class="response-saved-modal-overlay" *ngIf="showResponseSaved">
+    <div class="response-saved-modal">
+        <div class="check-icon">
+            <svg viewBox="0 0 100 100" class="checkmark-svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#689f38" stroke-width="5"></circle>
+                <path d="M 28 50 L 45 65 L 75 35" fill="none" stroke="#689f38" stroke-width="5" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <div class="response-text">Response Saved</div>
+    </div>
+</div>
 
-<p [ngStyle]="{'color': questionColor}">1. Which language is used to structure a web page?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q1">CSS</li>
-    <li><input type="checkbox" name="q1">HTML</li>
-    <li><input type="checkbox" name="q1">JavaScript</li>
-    <li><input type="checkbox" name="q1">SQL</li></div>
-</ul>
+<div class="quiz-container">
+    
+    <div class="header-bar">
+        <div class="nav-area">
+            <span class="logo-text">{{username}}</span>
+        </div>
+        
+        <div class="status-area">
+            <span>{{ timerHours | number:'2.0' }}</span> Hrs :
+            <span>{{ timerMinutes | number:'2.0' }}</span> Mins
+            | 
+            <span class="nav-text" (click)="prevQuestion()" [class.disabled]="currentPage === 1">
+                &lt; Prev
+            </span> 
+            {{ currentQuestionIndex }}/{{ totalQuestions }} 
+            <span class="nav-text" (click)="nextQuestion()" [class.disabled]="currentPage === totalPages">
+                Next &gt;
+            </span>
+        </div>
+    </div>
+    
+    <div class="content-area" *ngIf="currentQuestion">
+        
+        <div class="statement-panel">
+            <div class="panel-heading">Statement</div>
+            
+            <div class="question-container">
+                <p class="question-text">
+                   {{currentPage}}.{{ currentQuestion.question }}
+                </p>
+            </div>
+            
+            <div class="feedback-section">
+      
+            </div>
+        </div>
 
-<p [ngStyle]="{'color': questionColor}">2. Which property is used to change the text color in CSS?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q2">text-style</li>
-    <li><input type="checkbox" name="q2">font-color</li>
-    <li><input type="checkbox" name="q2">color</li>
-    <li><input type="checkbox" name="q2">text-color</li></div>
-</ul>
+        <div class="options-panel">
+            <div class="panel-heading">Select one of the following options:</div>
+            
+            <div class="options-list">
+                <div 
+                    *ngFor="let option of currentQuestion.options" 
+                    class="option-card"
+                    [class.selected]="selectedAnswer[currentQuestion.id] === option"
+                    (click)="selectOption(option)">
+                    
+                    <span class="radio-indicator"></span>
+                    <div class="option-text">{{ option }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="footer-actions">
 
-<p [ngStyle]="{'color': questionColor}">3. Which tag is used to create a button in HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q3">&lt;input type="button"&gt;</li>
-    <li><input type="checkbox" name="q3">&lt;btn&gt;</li>
-    <li><input type="checkbox" name="q3">&lt;button&gt;</li>
-    <li><input type="checkbox" name="q3">&lt;submit&gt;</li></div>
-</ul>
+  <button 
+    class="action-button prev-button"
+    (click)="prevQuestion()"
+    *ngIf="currentPage > 1">
+    Prev
+  </button>
 
-<p [ngStyle]="{'color': questionColor}">4. Which CSS layout is used for responsive web design?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q4">Grid</li>
-    <li><input type="checkbox" name="q4">Flexbox</li>
-    <li><input type="checkbox" name="q4">Table</li>
-    <li><input type="checkbox" name="q4">Block</li></div>
-</ul>
+  <button 
+    class="action-button next-button"
+    (click)="nextQuestion()"
+    *ngIf="currentPage < totalPages">
+    Next
+  </button>
 
-<p [ngStyle]="{'color': questionColor}">5. Which JavaScript method is used to print output in the console?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q5">console.log()</li>
-    <li><input type="checkbox" name="q5">print()</li>
-    <li><input type="checkbox" name="q5">logconsole()</li>
-    <li><input type="checkbox" name="q5">write()</li></div>
-</ul>
+  <button 
+    class="action-button submit-button"
+    (click)="submitAssignment()"
+    *ngIf="currentPage === totalPages">
+    Submit
+  </button>
 
-<p [ngStyle]="{'color': questionColor}">6. Which HTML tag is used to link an external CSS file?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q6">&lt;script&gt;</li>
-    <li><input type="checkbox" name="q6">&lt;style&gt;</li>
-    <li><input type="checkbox" name="q6">&lt;link&gt;</li>
-    <li><input type="checkbox" name="q6">&lt;meta&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">7. Which JavaScript keyword is used to declare a variable that can change?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q7">const</li>
-    <li><input type="checkbox" name="q7">final</li>
-    <li><input type="checkbox" name="q7">var</li>
-    <li><input type="checkbox" name="q7">object</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">8. What does CSS stand for?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q8">Cascading Style Sheets</li>
-    <li><input type="checkbox" name="q8">Creative Sheet Style</li>
-    <li><input type="checkbox" name="q8">Colorful Style System</li>
-    <li><input type="checkbox" name="q8">Control Sheet Styles</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">9. Which of the following is a JavaScript framework?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q9">Angular</li>
-    <li><input type="checkbox" name="q9">HTML</li>
-    <li><input type="checkbox" name="q9">CSS</li>
-    <li><input type="checkbox" name="q9">MongoDB</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">10. Which tag is used to display an image in HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q10">&lt;pic&gt;</li>
-    <li><input type="checkbox" name="q10">&lt;image&gt;</li>
-    <li><input type="checkbox" name="q10">&lt;img&gt;</li>
-    <li><input type="checkbox" name="q10">&lt;src&gt;</li></div>
-</ul>
-<p [ngStyle]="{'color': questionColor}">11. Which HTML tag is used to create a hyperlink?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q11">&lt;a&gt;</li>
-    <li><input type="checkbox" name="q11">&lt;link&gt;</li>
-    <li><input type="checkbox" name="q11">&lt;href&gt;</li>
-    <li><input type="checkbox" name="q11">&lt;url&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">12. Which CSS property is used to change the background color?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q12">bg-color</li>
-    <li><input type="checkbox" name="q12">background</li>
-    <li><input type="checkbox" name="q12">background-color</li>
-    <li><input type="checkbox" name="q12">color-background</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">13. Which JavaScript function is used to show an alert box?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q13">alert()</li>
-    <li><input type="checkbox" name="q13">msg()</li>
-    <li><input type="checkbox" name="q13">message()</li>
-    <li><input type="checkbox" name="q13">popup()</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">14. Which attribute is used to provide alternative text for an image?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q14">src</li>
-    <li><input type="checkbox" name="q14">title</li>
-    <li><input type="checkbox" name="q14">alt</li>
-    <li><input type="checkbox" name="q14">name</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">15. Which of the following is used to style HTML elements?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q15">JavaScript</li>
-    <li><input type="checkbox" name="q15">CSS</li>
-    <li><input type="checkbox" name="q15">SQL</li>
-    <li><input type="checkbox" name="q15">PHP</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">16. Which tag is used for the largest heading?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q16">&lt;h6&gt;</li>
-    <li><input type="checkbox" name="q16">&lt;heading&gt;</li>
-    <li><input type="checkbox" name="q16">&lt;h1&gt;</li>
-    <li><input type="checkbox" name="q16">&lt;title&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">17. Which CSS property controls text size?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q17">font-weight</li>
-    <li><input type="checkbox" name="q17">font-size</li>
-    <li><input type="checkbox" name="q17">text-size</li>
-    <li><input type="checkbox" name="q17">size</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">18. What is the default display property of a div?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q18">inline</li>
-    <li><input type="checkbox" name="q18">inline-block</li>
-    <li><input type="checkbox" name="q18">block</li>
-    <li><input type="checkbox" name="q18">flex</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">19. Which JavaScript method selects an element by ID?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q19">getElement()</li>
-    <li><input type="checkbox" name="q19">queryID()</li>
-    <li><input type="checkbox" name="q19">getElementById()</li>
-    <li><input type="checkbox" name="q19">selectID()</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">20. Which symbol is used for comments in CSS?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q20">// comment //</li>
-    <li><input type="checkbox" name="q20"># comment</li>
-    <li><input type="checkbox" name="q20">/* comment */</li>
-    <li><input type="checkbox" name="q20">&lt;!-- comment --&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">21. Which HTML element is used to create a dropdown?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q21">&lt;dropdown&gt;</li>
-    <li><input type="checkbox" name="q21">&lt;select&gt;</li>
-    <li><input type="checkbox" name="q21">&lt;option&gt;</li>
-    <li><input type="checkbox" name="q21">&lt;list&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">22. Which CSS property is used to add space inside an element?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q22">margin</li>
-    <li><input type="checkbox" name="q22">padding</li>
-    <li><input type="checkbox" name="q22">border</li>
-    <li><input type="checkbox" name="q22">outline</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">23. Which HTML tag is used to insert a line break?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q23">&lt;break&gt;</li>
-    <li><input type="checkbox" name="q23">&lt;br&gt;</li>
-    <li><input type="checkbox" name="q23">&lt;lb&gt;</li>
-    <li><input type="checkbox" name="q23">&lt;hr&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">24. Which JavaScript loop is used to iterate over an array?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q24">for-of</li>
-    <li><input type="checkbox" name="q24">foreach()</li>
-    <li><input type="checkbox" name="q24">for()</li>
-    <li><input type="checkbox" name="q24">All of these</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">25. Which CSS property changes the width of an element?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q25">height</li>
-    <li><input type="checkbox" name="q25">size</li>
-    <li><input type="checkbox" name="q25">width</li>
-    <li><input type="checkbox" name="q25">max-size</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">26. Which HTML tag represents a table row?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q26">&lt;td&gt;</li>
-    <li><input type="checkbox" name="q26">&lt;tr&gt;</li>
-    <li><input type="checkbox" name="q26">&lt;table-row&gt;</li>
-    <li><input type="checkbox" name="q26">&lt;row&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">27. Which HTML tag displays a checkbox?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q27">&lt;check&gt;</li>
-    <li><input type="checkbox" name="q27">&lt;checkbox&gt;</li>
-    <li><input type="checkbox" name="q27">&lt;input type="checkbox"&gt;</li>
-    <li><input type="checkbox" name="q27">&lt;option&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">28. Which CSS property is used to make text bold?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q28">bold</li>
-    <li><input type="checkbox" name="q28">font-weight</li>
-    <li><input type="checkbox" name="q28">text-bold</li>
-    <li><input type="checkbox" name="q28">strong</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">29. Which of the following is used to add JavaScript to HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q29">&lt;js&gt;</li>
-    <li><input type="checkbox" name="q29">&lt;script&gt;</li>
-    <li><input type="checkbox" name="q29">&lt;javascript&gt;</li>
-    <li><input type="checkbox" name="q29">&lt;code&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">30. Which event is fired when a user clicks a button?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q30">onpress</li>
-    <li><input type="checkbox" name="q30">onclick</li>
-    <li><input type="checkbox" name="q30">onbutton</li>
-    <li><input type="checkbox" name="q30">onselect</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">31. Which HTML tag is used to create an ordered list?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q31">&lt;ul&gt;</li>
-    <li><input type="checkbox" name="q31">&lt;ol&gt;</li>
-    <li><input type="checkbox" name="q31">&lt;list&gt;</li>
-    <li><input type="checkbox" name="q31">&lt;order&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">32. Which CSS property is used to add shadow to text?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q32">text-shadow</li>
-    <li><input type="checkbox" name="q32">shadow-text</li>
-    <li><input type="checkbox" name="q32">font-shadow</li>
-    <li><input type="checkbox" name="q32">shadow</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">33. Which JavaScript keyword declares a constant?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q33">var</li>
-    <li><input type="checkbox" name="q33">let</li>
-    <li><input type="checkbox" name="q33">const</li>
-    <li><input type="checkbox" name="q33">static</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">34. Which tag is used to create a table in HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q34">&lt;tbl&gt;</li>
-    <li><input type="checkbox" name="q34">&lt;table&gt;</li>
-    <li><input type="checkbox" name="q34">&lt;t&gt;</li>
-    <li><input type="checkbox" name="q34">&lt;data-table&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">35. Which CSS unit is relative to the root element?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q35">px</li>
-    <li><input type="checkbox" name="q35">%</li>
-    <li><input type="checkbox" name="q35">rem</li>
-    <li><input type="checkbox" name="q35">cm</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">36. Which HTML attribute is used to open a link in a new tab?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q36">tab="_blank"</li>
-    <li><input type="checkbox" name="q36">window="new"</li>
-    <li><input type="checkbox" name="q36">target="_blank"</li>
-    <li><input type="checkbox" name="q36">newtab="true"</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">37. Which of the following is a CSS framework?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q37">React</li>
-    <li><input type="checkbox" name="q37">Bootstrap</li>
-    <li><input type="checkbox" name="q37">Java</li>
-    <li><input type="checkbox" name="q37">MongoDB</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">38. Which JavaScript method converts a string to number?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q38">int()</li>
-    <li><input type="checkbox" name="q38">parseInt()</li>
-    <li><input type="checkbox" name="q38">convert()</li>
-    <li><input type="checkbox" name="q38">toNumber()</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">39. Which HTML tag is used to display a video?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q39">&lt;vid&gt;</li>
-    <li><input type="checkbox" name="q39">&lt;movie&gt;</li>
-    <li><input type="checkbox" name="q39">&lt;video&gt;</li>
-    <li><input type="checkbox" name="q39">&lt;media&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">40. How do you write a comment in HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q40">/* comment */</li>
-    <li><input type="checkbox" name="q40">// comment</li>
-    <li><input type="checkbox" name="q40">&lt;!-- comment --&gt;</li>
-    <li><input type="checkbox" name="q40"># comment</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">41. Which JavaScript operator is used to compare value AND type?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q41">==</li>
-    <li><input type="checkbox" name="q41">=</li>
-    <li><input type="checkbox" name="q41">===</li>
-    <li><input type="checkbox" name="q41">!=</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">42. Which CSS property is used to round corners?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q42">border</li>
-    <li><input type="checkbox" name="q42">border-radius</li>
-    <li><input type="checkbox" name="q42">radius</li>
-    <li><input type="checkbox" name="q42">round-corner</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">43. Which tag is used to display a progress bar?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q43">&lt;loading&gt;</li>
-    <li><input type="checkbox" name="q43">&lt;progress&gt;</li>
-    <li><input type="checkbox" name="q43">&lt;bar&gt;</li>
-    <li><input type="checkbox" name="q43">&lt;meter&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">44. Which method removes the last element from an array?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q44">pop()</li>
-    <li><input type="checkbox" name="q44">remove()</li>
-    <li><input type="checkbox" name="q44">delete()</li>
-    <li><input type="checkbox" name="q44">cut()</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">45. Which HTML tag is used for bold text?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q45">&lt;b&gt;</li>
-    <li><input type="checkbox" name="q45">&lt;bold&gt;</li>
-    <li><input type="checkbox" name="q45">&lt;strong&gt;</li>
-    <li><input type="checkbox" name="q45">Both &lt;b&gt; and &lt;strong&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">46. Which CSS property is used to align text?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q46">align</li>
-    <li><input type="checkbox" name="q46">text-align</li>
-    <li><input type="checkbox" name="q46">font-align</li>
-    <li><input type="checkbox" name="q46">content-align</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">47. Which JavaScript method adds an element to the end of an array?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q47">push()</li>
-    <li><input type="checkbox" name="q47">append()</li>
-    <li><input type="checkbox" name="q47">insert()</li>
-    <li><input type="checkbox" name="q47">add()</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">48. Which HTML tag is used to represent navigation links?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q48">&lt;nav&gt;</li>
-    <li><input type="checkbox" name="q48">&lt;links&gt;</li>
-    <li><input type="checkbox" name="q48">&lt;navbar&gt;</li>
-    <li><input type="checkbox" name="q48">&lt;navigation&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">49. Which CSS property sets the outer space around an element?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q49">padding</li>
-    <li><input type="checkbox" name="q49">margin</li>
-    <li><input type="checkbox" name="q49">border</li>
-    <li><input type="checkbox" name="q49">spacing</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">50. Which JavaScript function is used to convert JSON to an object?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q50">JSON.convert()</li>
-    <li><input type="checkbox" name="q50">JSON.parse()</li>
-    <li><input type="checkbox" name="q50">parse.json()</li>
-    <li><input type="checkbox" name="q50">toJSON()</li></div>
-</ul>
-<p [ngStyle]="{'color': questionColor}">51. Which attribute is used to provide an alternative text for an image?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q51">title</li>
-    <li><input type="checkbox" name="q51">alt</li>
-    <li><input type="checkbox" name="q51">desc</li>
-    <li><input type="checkbox" name="q51">text</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">52. Which CSS property controls the size of text?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q52">font-size</li>
-    <li><input type="checkbox" name="q52">text-size</li>
-    <li><input type="checkbox" name="q52">size</li>
-    <li><input type="checkbox" name="q52">font-style</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">53. Which tag is used to create a dropdown list in HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q53">&lt;dropdown&gt;</li>
-    <li><input type="checkbox" name="q53">&lt;select&gt;</li>
-    <li><input type="checkbox" name="q53">&lt;choice&gt;</li>
-    <li><input type="checkbox" name="q53">&lt;list&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">54. Which method is used to select an element by ID in JavaScript?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q54">getElementByClass()</li>
-    <li><input type="checkbox" name="q54">querySelectorAll()</li>
-    <li><input type="checkbox" name="q54">getElementById()</li>
-    <li><input type="checkbox" name="q54">selectId()</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">55. Which CSS property is used to add space inside an element?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q55">margin</li>
-    <li><input type="checkbox" name="q55">padding</li>
-    <li><input type="checkbox" name="q55">border</li>
-    <li><input type="checkbox" name="q55">gap</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">56. Which HTML tag is used for the largest heading?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q56">&lt;h6&gt;</li>
-    <li><input type="checkbox" name="q56">&lt;h3&gt;</li>
-    <li><input type="checkbox" name="q56">&lt;h1&gt;</li>
-    <li><input type="checkbox" name="q56">&lt;head&gt;</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">57. Which JavaScript operator is used for strict equality?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q57">==</li>
-    <li><input type="checkbox" name="q57">!=</li>
-    <li><input type="checkbox" name="q57">===</li>
-    <li><input type="checkbox" name="q57">=</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">58. Which CSS property is used to make text bold?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q58">font-weight</li>
-    <li><input type="checkbox" name="q58">bold-style</li>
-    <li><input type="checkbox" name="q58">text-bold</li>
-    <li><input type="checkbox" name="q58">font-bold</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">59. Which of the following is used to make a website mobile-friendly?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q59">meta viewport</li>
-    <li><input type="checkbox" name="q59">script tag</li>
-    <li><input type="checkbox" name="q59">header tag</li>
-    <li><input type="checkbox" name="q59">footer tag</li></div>
-</ul>
-
-<p [ngStyle]="{'color': questionColor}">60. Which tag is used to create a table row in HTML?</p>
-<ul><div class="box-body">
-    <li><input type="checkbox" name="q60">&lt;td&gt;</li>
-    <li><input type="checkbox" name="q60">&lt;tr&gt;</li>
-    <li><input type="checkbox" name="q60">&lt;th&gt;</li>
-    <li><input type="checkbox" name="q60">&lt;table-row&gt;</li></div>
-</ul>
+</div>
+</div>

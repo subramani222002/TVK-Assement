@@ -3,9 +3,7 @@
 /* Main Container */
 .container {
   padding: 40px;
-  /* background-image: url('../../assets/assesspf/testbg.jpeg'); */
-  background-image: url("https://tse2.mm.bing.net/th/id/OIP.CZZx1NecHO2uO1LO6GsMoAHaFP?pid=Api&P=0&h=180");
-  /* background-color: #333; */
+  background-image: url("../../assets/assesspf/testb.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
