@@ -40,3 +40,9 @@ export class AppComponent {
 console.log(`Normalized Path: ${currentPath}, Show Footer: ${this.showFooter}`);    });
   }
 }
+
+
+// feedback
+// goToFeedback() {
+//   this.router.navigate(['/feedback']);
+// }
