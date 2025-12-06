@@ -1,0 +1,34 @@
+<div class="chat-widget">
+  <div class="chat-panel open">
+
+    <div class="header">
+      <div class="title">Feedback Bot</div>
+      <button class="close-btn" (click)="closeChat()">✖</button>
+    </div>
+
+    <div class="chat-window">
+
+      <div *ngFor="let m of messages" class="msg-row" [ngClass]="m.from">
+
+        <div class="avatar" *ngIf="m.from === 'bot'">🤖</div>
+
+        <div class="bubble" [class.bot]="m.from==='bot'" [class.user]="m.from==='user'">
+          <div>{{ m.text }}</div>
+
+          <div *ngIf="m.options?.length" class="quick-replies">
+            <button *ngFor="let o of m.options" (click)="onQuickReply(o, m)">
+              {{ o }}
+            </button>
+          </div>
+        </div>
+
+        <div class="avatar" *ngIf="m.from === 'user'">🙂</div>
+
+      </div>
+
+    </div>
+
+    <button (click)="goToFeedback()">Open Feedback</button>
+
+  </div>
+</div>
