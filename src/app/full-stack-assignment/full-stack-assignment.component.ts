@@ -10,9 +10,8 @@ export class FullStackAssignmentComponent implements OnInit {
 
   username = 'chandana';
   
-   timerHours: number = 0;
+   timerHours: number = 1;
    timerMinutes: number = 0;
-   timerSeconds: number = 0;
 
    interval: any;
 
@@ -32,24 +31,21 @@ export class FullStackAssignmentComponent implements OnInit {
     this.questions = this.shuffleArray([...QUESTION_BANK]); 
     this.startTimer();
   }
-
-
-  startTimer() {
+startTimer() {
   this.interval = setInterval(() => {
-
-    this.timerSeconds++;
-
-    if (this.timerSeconds === 60) {
-      this.timerSeconds = 0;
-      this.timerMinutes++;
+    if (this.timerMinutes > 0) {
+      this.timerMinutes--;
+    } else {
+      if (this.timerHours > 0) {
+        this.timerHours--;
+        this.timerMinutes = 59;
+      } else {
+        clearInterval(this.interval);
+        alert("⏳ Time is over! Auto submitting...");
+        this.submitAssignment();
+      }
     }
-
-    if (this.timerMinutes === 60) {
-      this.timerMinutes = 0;
-      this.timerHours++;
-    }
-
-  }, 1000); // runs every second
+  }, 60000); // runs every 1 minute
 }
  
   shuffleArray(array: any[]) {

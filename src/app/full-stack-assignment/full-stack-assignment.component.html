@@ -19,8 +19,7 @@
         
         <div class="status-area">
             <span>{{ timerHours | number:'2.0' }}</span> Hrs :
-            <span>{{ timerMinutes | number:'2.0' }}</span> Min :
-            <span>{{ timerSeconds | number:'2.0' }}</span> Sec
+            <span>{{ timerMinutes | number:'2.0' }}</span> Min 
             | 
             <span class="nav-text" (click)="prevQuestion()" [class.disabled]="currentPage === 1">
                 &lt; Prev
