@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-<<<<<<< Updated upstream
 import { Router } from '@angular/router';
-=======
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-assessmentplatform',
@@ -11,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class AssessmentplatformComponent {
 
-<<<<<<< Updated upstream
 isChecked: boolean = false;
 warnmsg:string ='';
 
@@ -33,6 +29,4 @@ const checkbox: any = document.getElementById('agree');
   this.warnmsg = ""
   this.router.navigate(['/testlink'])
 }
-=======
->>>>>>> Stashed changes
 }
