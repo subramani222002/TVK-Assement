@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { AssessmentPlatformComponent } from './assessment-platform/assessment-platform.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { FullStackAssignmentComponent } from './full-stack-assignment/full-stack-assignment.component';
@@ -15,6 +14,8 @@ import { BackEndAssignmentComponent } from './back-end-assignment/back-end-assig
 import { JavaAssignmentComponent } from './java-assignment/java-assignment.component';
 import { PythonAssignmentComponent } from './python-assignment/python-assignment.component';
 import { TestingAssignmentComponent } from './testing-assignment/testing-assignment.component';
+import { TestLinksComponent } from './test-links/test-links.component';
+import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
 
 // ✅ Correct import (WITH S)
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
@@ -22,7 +23,7 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AssessmentPlatformComponent,
+    AssessmentplatformComponent,
     ContactComponent,
     HomeComponent,
     FullStackAssignmentComponent,

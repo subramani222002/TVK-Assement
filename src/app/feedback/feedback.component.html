@@ -1,0 +1,32 @@
+<!-- Floating Chat Widget -->
+<div class="chat-widget">
+  <button class="chat-toggle" (click)="toggleChat()">💬</button>
+
+  <div class="chat-panel" [class.open]="isOpen">
+    <div class="header">
+      <div class="title">Feedback Bot</div>
+      <button class="close-btn" (click)="toggleChat()">✖</button>
+    </div>
+
+    <div class="chat-window">
+      <div *ngFor="let m of messages" class="msg-row" [ngClass]="m.from">
+        <div class="avatar" *ngIf="m.from==='bot'">🎯</div>
+        <div class="bubble" [class.bot]="m.from==='bot'" [class.user]="m.from==='user'">
+          <div>{{ m.text }}</div>
+          <div class="quick-replies" *ngIf="m.options?.length && m.from==='bot'">
+            <button *ngFor="let o of m.options" (click)="onQuickReply(o, m)">{{ o }}</button>
+          </div>
+        </div>
+        <div class="avatar" *ngIf="m.from==='user'">🙂</div>
+      </div>
+    </div>
+
+    <input 
+  type="text"
+  placeholder="Type here..."
+  [(ngModel)]="userInput"
+  (keydown.enter)="sendText()" />
+
+
+  </div>
+</div>

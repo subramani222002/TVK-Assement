@@ -1,14 +1,12 @@
 <header class="header">
   <div class="logo">
-    <span>TVK Logo</span>
-  </div>
-
+    <span><img src="assets/homeImg/img5.jpg" class="two"></span>
+  </div>  
   <nav class="nav">
     <a routerLink="">Home </a>
     <a routerLink="ass">Assessment Platform</a>
     <a routerLink="contact">Contact</a>
   </nav>
-
   <div class="icons">
     <a><i class=""></i></a>
     <a><i class=""></i></a>
@@ -18,10 +16,9 @@
 </header>
 
 <div class="app-container">
-  <!-- Only ONE router-outlet allowed -->
   <router-outlet></router-outlet>
 </div>
-
+<app-feedbacks></app-feedbacks>
 <footer class="footer">
   <div class="footer-container">
 
@@ -74,4 +71,13 @@
     © 2025. All rights reserved. Designed and Developed By TVK technologies.
   </p>
 </footer>
+
+<!-- feedback -->
+<!-- Floating Mini Chat Box (Clickable) -->
+<!-- <div class="mini-chat-box" (click)="goToFeedback()">
+  <img src="assets/chat-icon.png" class="mini-chat-icon" /> -->
+  <!-- OR use emoji instead of image -->
+  <!-- <span class="mini-chat-emoji">💬</span> -->
+<!-- </div> -->
+
 

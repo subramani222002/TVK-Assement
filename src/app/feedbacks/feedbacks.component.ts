@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 type Msg = {
   id: string;
@@ -9,14 +10,15 @@ type Msg = {
 };
 
 @Component({
-  selector: 'app-feedback',
+  selector: 'app-feedbacks',
   templateUrl: './feedbacks.component.html',
   styleUrls: ['./feedbacks.component.css']
 })
 export class FeedbacksComponent implements OnInit {
-  isOpen = true;
+  isOpen = false;          // start closed
+  firstOpen = true;        // track first open
   userInput = '';
-  messages: Msg[] = [];       // ONLY chat messages
+  messages: Msg[] = [];
   username: string = '';
   answers: any = {};
 
@@ -31,12 +33,20 @@ export class FeedbacksComponent implements OnInit {
     { id: 'end', text: 'Thanks for your feedback! 🎉', type: 'none' }
   ];
 
+  constructor(private router: Router){}
+
   ngOnInit() {
-    this.botSay(this.script[0]);
+    // Do NOT call botSay here → starts closed
   }
 
   toggleChat() {
     this.isOpen = !this.isOpen;
+
+    // Start chat only on first open
+    if (this.isOpen && this.firstOpen) {
+      this.firstOpen = false;
+      this.botSay(this.script[0]);
+    }
   }
 
   closeChat() {
@@ -45,6 +55,7 @@ export class FeedbacksComponent implements OnInit {
 
   goToFeedback() {
     console.log('Opening feedback page...');
+    // this.router.navigate(['/feedback']); // Uncomment if using routing
   }
 
   private async botSay(item: any) {
@@ -115,8 +126,8 @@ export class FeedbacksComponent implements OnInit {
     this.botSay(nextItem).then(() => {
       if (nextItem.id === 'end') {
         setTimeout(() => {
-          this.isOpen = false;
-          this.reset();
+          this.isOpen = false; // auto-close after feedback
+          this.reset();        // reset messages for next open
         }, 1500);
       }
     });
