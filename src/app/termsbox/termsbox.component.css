@@ -1,0 +1,134 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background:#e6f0ff;
+  font-family: 'Arial', sans-serif;
+
+}
+
+
+.card {
+  width: 60%;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #020202;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: -100px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.card .title {
+  font-size:40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  color:green
+}
+
+.card hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #00ffe0, #0077ff);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.card ul li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+.card ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #00ff99;
+  font-weight: bold;
+}
+
+
+.card .green {
+  color: #60a02a;
+  font-weight: 600;
+}
+
+.card .start-btn {
+  width: 60%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 150px;
+  
+}
+
+.card .start-btn:hover {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 25px 20px;
+  }
+
+  .card .title {
+    font-size: 1.6rem;
+  }
+
+  .card ul li {
+    font-size: 0.95rem;
+  }
+
+  .card .start-btn {
+    font-size: 1rem;
+    padding: 10px 0;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 20px 15px;
+  }
+
+  .card .title {
+    font-size: 1.4rem;
+  }
+
+  .card ul li {
+    font-size: 0.9rem;
+  }
+
+  .card .start-btn {
+    font-size: 0.95rem;
+    padding: 8px 0;
+    
+  }
+}

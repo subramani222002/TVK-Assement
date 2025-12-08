@@ -16,9 +16,8 @@ import { PythonAssignmentComponent } from './python-assignment/python-assignment
 import { TestingAssignmentComponent } from './testing-assignment/testing-assignment.component';
 import { TestLinksComponent } from './test-links/test-links.component';
 import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
-
-// ✅ Correct import (WITH S)
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { TermsboxComponent } from './termsbox/termsbox.component';
 
 
 @NgModule({
@@ -33,7 +32,9 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
     JavaAssignmentComponent,
     PythonAssignmentComponent,
     TestingAssignmentComponent,
-    FeedbacksComponent   // ⬅ MUST MATCH .ts EXPORT
+    FeedbacksComponent ,
+    TestLinksComponent,
+    TermsboxComponent  
   ],
   imports: [
     BrowserModule,
