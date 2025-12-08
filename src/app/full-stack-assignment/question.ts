@@ -7,7 +7,7 @@ export const QUESTION_BANK = [
     { id: 6, question: "Which HTML element is used to display an image?", options: ["<img>", "<image>", "<pic>", "<src>"], correctAnswer: "<img>" },
     { id: 7, question: "Which CSS property is used to change the background color?", options: ["bgcolor", "color", "background-color", "background-style"], correctAnswer: "background-color" },
     { id: 8, question: "Which HTML tag is used to define a table row?", options: ["<td>", "<tr>", "<th>", "<table-row>"], correctAnswer: "<tr>" },
-    { id: 9, question: "Which symbol is used for comments in CSS?", options: ["// comment", "", "/* comment */", "# comment"], correctAnswer: "/* comment */" },
+    { id: 9, question: "Which symbol is used for comments in CSS?", options: ["// comment", "none", "/* comment */", "# comment"], correctAnswer: "/* comment */" },
     { id: 10, question: "Which HTML tag is used to create an unordered list?", options: ["<ul>", "<ol>", "<li>", "<list>"], correctAnswer: "<ul>" },
 
     { id: 11, question: "JavaScript is _________ language.", options: ["Programming", "Markup", "Style sheet", "Database"], correctAnswer: "Programming" },

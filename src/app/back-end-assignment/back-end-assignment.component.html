@@ -1,90 +1,78 @@
-<div class="response-saved-modal-overlay" *ngIf="showResponseSaved">
-    <div class="response-saved-modal">
-        <div class="check-icon">
-            <svg viewBox="0 0 100 100" class="checkmark-svg">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#689f38" stroke-width="5"></circle>
-                <path d="M 28 50 L 45 65 L 75 35" fill="none" stroke="#689f38" stroke-width="5" stroke-linecap="round"></path>
-            </svg>
-        </div>
-        <div class="response-text">Response Saved</div>
-    </div>
-</div>
-
-<div class="quiz-container">
-    
+<div class="quiz-wrapper">
+<div class="main-content">
     <div class="header-bar">
-        <div class="nav-area">
-            <span class="logo-text">{{username}}</span>
-        </div>
-        
-        <div class="status-area">
-            <span>{{ timerHours | number:'2.0' }}</span> Hrs :
-            <span>{{ timerMinutes | number:'2.0' }}</span> Min
-            | 
-            <span class="nav-text" (click)="prevQuestion()" [class.disabled]="currentPage === 1">
-                &lt; Prev
-            </span> 
-            {{ currentQuestionIndex }}/{{ totalQuestions }} 
-            <span class="nav-text" (click)="nextQuestion()" [class.disabled]="currentPage === totalPages">
-                Next &gt;
-            </span>
-        </div>
+      <span class="username">{{ username }}</span>
+      <div class="status-area">
+        <span>{{ timerHours | number: '2.0' }}</span> Hrs :
+        <span>{{ timerMinutes | number: '2.0' }}</span> Min |
+        <span class="nav-text" (click)="prevQuestion()" [class.disabled]="currentPage === 1">
+        < Prev
+        </span>
+        {{ currentQuestionIndex }}/{{ totalQuestions }}
+
+        <span class="nav-text" (click)="nextQuestion()" [class.disabled]="currentPage === totalPages">
+          Next >
+        </span>
+      </div>
     </div>
-    
-    <div class="content-area" *ngIf="currentQuestion">
-        
-        <div class="statement-panel">
-            <div class="panel-heading">Statement</div>
-            
-            <div class="question-container">
-                <p class="question-text">
-                   {{currentPage}}.{{ currentQuestion.question }}
-                </p>
-            </div>
-            
-            <div class="feedback-section">
-      
-            </div>
-        </div>
+    <div class="question-area" *ngIf="currentQuestion">
+      <div class="statement-box">
+        <h3>Statement</h3>
+        <p>{{ currentPage }}. {{ currentQuestion.question }}</p>
+      </div>
+      <div class="options-box">
+        <h3>Select one of the following options:</h3>
+      <div class="options-list">
 
-        <div class="options-panel">
-            <div class="panel-heading">Select one of the following options:</div>
-            
-            <div class="options-list">
-                <div 
-                    *ngFor="let option of currentQuestion.options" 
-                    class="option-card"
-                    [class.selected]="selectedAnswer[currentQuestion.id] === option"
-                    (click)="selectOption(option)">
-                    
-                    <span class="radio-indicator"></span>
-                    <div class="option-text">{{ option }}</div>
-                </div>
-            </div>
-        </div>
+     <label *ngFor="let option of currentQuestion.options" class="option-card"
+        [class.selected]="selectedAnswer[currentQuestion.id] === option">
+ 
+     <input
+      type="radio"
+      name="question{{ currentQuestion.id }}"
+      [value]="option"
+      [(ngModel)]="selectedAnswer[currentQuestion.id]"
+      (change)="selectOption(option)"
+     />
+
+    <span class="option-text">{{ option }}</span>
+   </label>
+
+  </div>
+        <label class="review-check">
+          <input type="checkbox" [(ngModel)]="markedForReview[currentQuestion.id]" />
+          Mark for review
+        </label>
+      </div>
     </div>
-<div class="footer-actions">
 
-  <button 
-    class="action-button prev-button"
-    (click)="prevQuestion()"
-    *ngIf="currentPage > 1">
-    Prev
-  </button>
+    <div class="bottom-buttons">
+      <button class="btn" *ngIf="currentPage > 1" (click)="prevQuestion()">Prev</button>
+      <button class="btn" *ngIf="currentPage < totalPages" (click)="nextQuestion()">Next</button>
+      <button class="btn submit" *ngIf="currentPage === totalPages" (click)="submitAssignment()">Submit</button>
+    </div>
 
-  <button 
-    class="action-button next-button"
-    (click)="nextQuestion()"
-    *ngIf="currentPage < totalPages">
-    Next
-  </button>
+   
+    </div>
 
-  <button 
-    class="action-button submit-button"
-    (click)="submitAssignment()"
-    *ngIf="currentPage === totalPages">
-    Submit
-  </button>
+  <div class="right-panel">
+    <h3>Question Palette</h3>
 
-</div>
-</div>
+    <div class="palette-grid">
+
+      <button
+        *ngFor="let q of visiblePalette"
+        class="palette-btn"
+        [ngClass]="{
+          'not-visited': !selectedAnswer[q.id],
+          'answered': selectedAnswer[q.id],
+          'marked': markedForReview[q.id]
+        }"
+        (click)="goToQuestion(q.page)"
+      >
+        {{ q.page }}
+      </button>
+    </div>
+   </div>
+
+     </div>
