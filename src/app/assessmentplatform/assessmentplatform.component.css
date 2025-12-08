@@ -27,7 +27,7 @@
 .main{
     width: 100%;
     height: auto;
-    background-image: url("../../assets/assesspf/testb.jpeg");
+     background-image: url(../../assets/assesspf/assbg.jpeg); 
     background-size: cover;
     margin-top:-30px;
     margin-bottom:-15px;
@@ -56,13 +56,10 @@ p{
 }
 .agree-text{
     padding-top: 20px;
-    padding-left: 500px;
+    padding-left: 600px;
+    
+}
 
-}
-#agree{
-  
-  accent-color:gereen;
-}
 #continueBtn{
     text-align: center;
    display: block;

@@ -7,21 +7,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./test-links.component.css']
 })
 export class TestLinksComponent {
-    tests = [
-    { name: 'Full Stack Assignment', link: 'fullstack',img:'../../assets/assesspf/fullstack.png' },
-    {name:'Back-End Assignment',link:'backend',img:'../../assets/assesspf/backend.png'},
-    {name:'Front-End Assignment',link:'frontend',img:'../../assets/assesspf/frontend.png'},
-    { name: 'Java Assignment', link: 'java',img:'../../assets/assesspf/java.png' },
-    {name:'Testing Assignment',link:'testing',img:'../../assets/assesspf/tetsing.png'},
-    { name: 'Python Assignment', link: 'python',img:'../../assets/assesspf/python.png' },
-    
-  ];
 
-  constructor(private router: Router) {}
+  cards = [
+  {icon: 'fa-brands fa-react', title: 'Frontend Developer', time: '60 mins' ,link:'frontend' },
+  {icon: 'fa-brands fa-node-js', title: 'Backend Developer', time: '60 mins',link:'backend' },
+  {icon: 'fa-brands fa-java', title: 'Java Developer', time: '60 mins' ,link:'java'},
+  {icon: 'fa-brands fa-python', title: 'Python Developer', time: '60 mins',link:'python' },
+  {icon: 'fas fa-database', title: 'SQL Developer', time: '60 mins',link:'sql'},
+  {icon: 'fa-brands fa-angular', title: 'Angular Developer', time: '60 mins',link:'angular'},
+  {icon: 'fa-brands fa-aws', title: 'AWS', time: '60 mins',link:'aws'},
+  {icon: 'fa-brands fa-php', title: 'PHP Developer', time: '60 mins',link:'php'},
+  {icon: 'fas fa-gem', title: 'Ruby Developer', time: '60 mins',link:'ruby'},
+  {icon:  'fa-solid fa-c ', title: 'C-Language ', time: '60 mins',link:'clangauge'},
+  {icon: 'fas fa-code', title: 'C++ Developer', time: '60 mins',link:'cpp'},
+  {icon: 'fab fa-cuttlefish', title: 'C# Developer', time: '60 mins',link:'csharp'},
+   
+];
 
-  openTest(route: string) {
-    this.router.navigate([route]);
+constructor(private router: Router) {}
+
+  startT(card:any) {
+    this.router.navigate(['/termsbox'],{queryParams:{testRoute:card.link}});
   }
-
 
 }

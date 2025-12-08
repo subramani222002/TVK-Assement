@@ -1,13 +1,20 @@
 <div class="container">
-  <h2 class="title">Available Tests</h2>
+  <h1 class="heading">Available Tests</h1>
 
-  <div class="grid">
-    <div class="card" *ngFor="let test of tests">
-    <img [src]="test.img" alt="{{test.name}}">
-      <h3>{{ test.name }}</h3>
+  <div class="card-grid">
+    <div class="card" *ngFor="let test of cards">
+       
+      <div class="title-row">
+        <i [class]="test.icon + ' icon'"></i>
+        <h2 class="title">{{ test.title }}</h2>
+      </div>
 
-      <button (click)="openTest(test.link)">Start Test</button>
+      <p class="time">⏱ {{ test.time }}</p>
+
+      <button class="btn-active" (click)="startT(test)">Start</button>
+
     </div>
   </div>
 </div>
+
 
