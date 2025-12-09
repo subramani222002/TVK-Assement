@@ -237,7 +237,7 @@ html {
 }
 
 .form-pic img {
-  width: 550px; height: 550px;
+  width: 460px; height: 550px;
   border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
   transition: 0.4s;
