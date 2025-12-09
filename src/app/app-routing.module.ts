@@ -10,6 +10,7 @@ import { PythonAssignmentComponent } from './python-assignment/python-assignment
 import { TestingAssignmentComponent } from './testing-assignment/testing-assignment.component';
 import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
 import { TestLinksComponent } from './test-links/test-links.component';
+import { TermsboxComponent } from './termsbox/termsbox.component';
 
 const routes: Routes = [
   { path: 'contact', component: ContactComponent },
