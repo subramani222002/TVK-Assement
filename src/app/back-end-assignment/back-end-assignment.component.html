@@ -1,78 +1,493 @@
-<div class="quiz-wrapper">
-<div class="main-content">
-    <div class="header-bar">
-      <span class="username">{{ username }}</span>
-      <div class="status-area">
-        <span>{{ timerHours | number: '2.0' }}</span> Hrs :
-        <span>{{ timerMinutes | number: '2.0' }}</span> Min |
-        <span class="nav-text" (click)="prevQuestion()" [class.disabled]="currentPage === 1">
-        < Prev
-        </span>
-        {{ currentQuestionIndex }}/{{ totalQuestions }}
+<h1 [ngStyle]="{ 'color': heding }">Online Backend Assignment</h1>
+<h2>Multiple Choice Questions</h2>
 
-        <span class="nav-text" (click)="nextQuestion()" [class.disabled]="currentPage === totalPages">
-          Next >
-        </span>
-      </div>
-    </div>
-    <div class="question-area" *ngIf="currentQuestion">
-      <div class="statement-box">
-        <h3>Statement</h3>
-        <p>{{ currentPage }}. {{ currentQuestion.question }}</p>
-      </div>
-      <div class="options-box">
-        <h3>Select one of the following options:</h3>
-      <div class="options-list">
+<p [ngStyle]="{'color': questionColor}">1. Which protocol is used to communicate between client and server?</p>
+<ul> <div class="box-body">
+    <li><input type="checkbox" name="q1">FTP</li>
+    <li><input type="checkbox" name="q1">SMTP</li>
+    <li><input type="checkbox" name="q1">HTTP</li>
+    <li><input type="checkbox" name="q1">SSH</li></div>
+</ul>
 
-     <label *ngFor="let option of currentQuestion.options" class="option-card"
-        [class.selected]="selectedAnswer[currentQuestion.id] === option">
- 
-     <input
-      type="radio"
-      name="question{{ currentQuestion.id }}"
-      [value]="option"
-      [(ngModel)]="selectedAnswer[currentQuestion.id]"
-      (change)="selectOption(option)"
-     />
+<p [ngStyle]="{'color': questionColor}">2. Which HTTP method is used to retrieve data from a server?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q2">POST</li>
+    <li><input type="checkbox" name="q2">PUT</li>
+    <li><input type="checkbox" name="q2">GET</li>
+    <li><input type="checkbox" name="q2">DELETE</li></div>
+</ul>
 
-    <span class="option-text">{{ option }}</span>
-   </label>
+<p [ngStyle]="{'color': questionColor}">3. Which database is NoSQL?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q3">MySQL</li>
+    <li><input type="checkbox" name="q3">PostgreSQL</li>
+    <li><input type="checkbox" name="q3">MongoDB</li>
+    <li><input type="checkbox" name="q3">Oracle</li></div>
+</ul>
 
-  </div>
-        <label class="review-check">
-          <input type="checkbox" [(ngModel)]="markedForReview[currentQuestion.id]" />
-          Mark for review
-        </label>
-      </div>
-    </div>
+<p [ngStyle]="{'color': questionColor}">4. Which keyword is used to handle exceptions in Java?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q4">catch</li>
+    <li><input type="checkbox" name="q4">check</li>
+    <li><input type="checkbox" name="q4">problem</li>
+    <li><input type="checkbox" name="q4">exception</li></div>
+</ul>
 
-    <div class="bottom-buttons">
-      <button class="btn" *ngIf="currentPage > 1" (click)="prevQuestion()">Prev</button>
-      <button class="btn" *ngIf="currentPage < totalPages" (click)="nextQuestion()">Next</button>
-      <button class="btn submit" *ngIf="currentPage === totalPages" (click)="submitAssignment()">Submit</button>
-    </div>
+<p [ngStyle]="{'color': questionColor}">5. Which of the following is used to connect Java with a database?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q5">React</li>
+    <li><input type="checkbox" name="q5">JDBC</li>
+    <li><input type="checkbox" name="q5">HTML</li>
+    <li><input type="checkbox" name="q5">CSS</li></div>
+</ul>
 
-   
-    </div>
+<p [ngStyle]="{'color': questionColor}">6. Which status code represents "Success"?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q6">404</li>
+    <li><input type="checkbox" name="q6">500</li>
+    <li><input type="checkbox" name="q6">200</li>
+    <li><input type="checkbox" name="q6">403</li></div>
+</ul> 
 
-  <div class="right-panel">
-    <h3>Question Palette</h3>
+<p [ngStyle]="{'color': questionColor}">7. Which of the following is used for APIs?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q7">REST</li>
+    <li><input type="checkbox" name="q7">CSS</li>
+    <li><input type="checkbox" name="q7">HTML</li>
+    <li><input type="checkbox" name="q7">Bootstrap</li></div>
+</ul>
 
-    <div class="palette-grid">
+<p [ngStyle]="{'color': questionColor}">8. Which command is used to install packages in Node.js?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q8">npx install</li>
+    <li><input type="checkbox" name="q8">npm install</li>
+    <li><input type="checkbox" name="q8">node install</li>
+    <li><input type="checkbox" name="q8">install pkg</li></div>
+</ul>
 
-      <button
-        *ngFor="let q of visiblePalette"
-        class="palette-btn"
-        [ngClass]="{
-          'not-visited': !selectedAnswer[q.id],
-          'answered': selectedAnswer[q.id],
-          'marked': markedForReview[q.id]
-        }"
-        (click)="goToQuestion(q.page)"
-      >
-        {{ q.page }}
-      </button>
-    </div>
-   </div>
+<p [ngStyle]="{'color': questionColor}">9. In Spring Boot, which file contains application-level configurations?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q9">application.txt</li>
+    <li><input type="checkbox" name="q9">config.json</li>
+    <li><input type="checkbox" name="q9">application.properties</li>
+    <li><input type="checkbox" name="q9">spring.config</li></div>
+</ul>
 
-     </div>
+<p [ngStyle]="{'color': questionColor}">10. What does SQL stand for?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q10">Structured Query Language</li>
+    <li><input type="checkbox" name="q10">Simple Query Line</li>
+    <li><input type="checkbox" name="q10">Statement Query Language</li>
+    <li><input type="checkbox" name="q10">Server Question Log</li></div>
+</ul>
+<p [ngStyle]="{'color': questionColor}">11. Which data format is commonly used in REST APIs?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q11">XML</li>
+    <li><input type="checkbox" name="q11">JSON</li>
+    <li><input type="checkbox" name="q11">CSV</li>
+    <li><input type="checkbox" name="q11">DOC</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">12. Which port does HTTP use by default?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q12">21</li>
+    <li><input type="checkbox" name="q12">25</li>
+    <li><input type="checkbox" name="q12">80</li>
+    <li><input type="checkbox" name="q12">3306</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">13. Which of the following is a backend language?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q13">HTML</li>
+    <li><input type="checkbox" name="q13">CSS</li>
+    <li><input type="checkbox" name="q13">Java</li>
+    <li><input type="checkbox" name="q13">Bootstrap</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">14. Which keyword is used to create a class in Java?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q14">make</li>
+    <li><input type="checkbox" name="q14">class</li>
+    <li><input type="checkbox" name="q14">object</li>
+    <li><input type="checkbox" name="q14">create</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">15. Which command is used to start a Spring Boot application?</p>
+<ul>
+    <div class="box-body">
+    <li><input type="checkbox" name="q15">npm start</li>
+    <li><input type="checkbox" name="q15">java app</li>
+    <li><input type="checkbox" name="q15">mvn spring-boot:run</li>
+    <li><input type="checkbox" name="q15">run boot</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">16. Which collection in Java does not allow duplicates?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q16">List</li>
+    <li><input type="checkbox" name="q16">Set</li>
+    <li><input type="checkbox" name="q16">ArrayList</li>
+    <li><input type="checkbox" name="q16">Queue</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">17. Which framework is used in Java for dependency injection?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q17">React</li>
+    <li><input type="checkbox" name="q17">Spring</li>
+    <li><input type="checkbox" name="q17">HTML</li>
+    <li><input type="checkbox" name="q17">CSS</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">18. Which SQL command is used to remove a table?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q18">DELETE</li>
+    <li><input type="checkbox" name="q18">DROP</li>
+    <li><input type="checkbox" name="q18">REMOVE</li>
+    <li><input type="checkbox" name="q18">CLEAR</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">19. Which of the following is a relational database?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q19">MongoDB</li>
+    <li><input type="checkbox" name="q19">Firebase</li>
+    <li><input type="checkbox" name="q19">MySQL</li>
+    <li><input type="checkbox" name="q19">Cassandra</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">20. What does API stand for?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q20">Application Programming Interface</li>
+    <li><input type="checkbox" name="q20">Applied Program Internet</li>
+    <li><input type="checkbox" name="q20">Advanced Processing Input</li>
+    <li><input type="checkbox" name="q20">Application Process Interaction</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">21. Which Java keyword is used to inherit a class?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q21">implements</li>
+    <li><input type="checkbox" name="q21">extends</li>
+    <li><input type="checkbox" name="q21">inherit</li>
+    <li><input type="checkbox" name="q21">copy</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">22. Which command shows all git branches?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q22">git list</li>
+    <li><input type="checkbox" name="q22">git show</li>
+    <li><input type="checkbox" name="q22">git branch</li>
+    <li><input type="checkbox" name="q22">git status</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">23. Which annotation is used for REST controllers in Spring Boot?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q23">@Controller</li>
+    <li><input type="checkbox" name="q23">@RestController</li>
+    <li><input type="checkbox" name="q23">@Service</li>
+    <li><input type="checkbox" name="q23">@Request</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">24. What is the default port for MySQL?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q24">80</li>
+    <li><input type="checkbox" name="q24">8080</li>
+    <li><input type="checkbox" name="q24">3306</li>
+    <li><input type="checkbox" name="q24">1521</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">25. Which HTTP method is idempotent?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q25">POST</li>
+    <li><input type="checkbox" name="q25">GET</li>
+    <li><input type="checkbox" name="q25">PATCH</li>
+    <li><input type="checkbox" name="q25">NONE</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">26. Which command is used to initialize a git repository?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q26">git start</li>
+    <li><input type="checkbox" name="q26">git init</li>
+    <li><input type="checkbox" name="q26">git new</li>
+    <li><input type="checkbox" name="q26">git install</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">27. Which Java collection allows key-value pairs?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q27">List</li>
+    <li><input type="checkbox" name="q27">Set</li>
+    <li><input type="checkbox" name="q27">Map</li>
+    <li><input type="checkbox" name="q27">Queue</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">28. Which of the following is not a HTTP method?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q28">CONNECT</li>
+    <li><input type="checkbox" name="q28">TRACE</li>
+    <li><input type="checkbox" name="q28">FETCH</li>
+    <li><input type="checkbox" name="q28">PATCH</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">29. In Java, which keyword is used to create an object?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q29">create</li>
+    <li><input type="checkbox" name="q29">make</li>
+    <li><input type="checkbox" name="q29">new</li>
+    <li><input type="checkbox" name="q29">object</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">30. In SQL, which command is used to sort records?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q30">ORDER BY</li>
+    <li><input type="checkbox" name="q30">SORT</li>
+    <li><input type="checkbox" name="q30">ARRANGE</li>
+    <li><input type="checkbox" name="q30">GROUP</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">31. Which of the following is a JavaScript runtime?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q31">React</li>
+    <li><input type="checkbox" name="q31">Node.js</li>
+    <li><input type="checkbox" name="q31">Spring</li>
+    <li><input type="checkbox" name="q31">Angular</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">32. Which annotation is used to autowire beans?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q32">@Autowired</li>
+    <li><input type="checkbox" name="q32">@Auto</li>
+    <li><input type="checkbox" name="q32">@InjectBean</li>
+    <li><input type="checkbox" name="q32">@Service</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">33. Which of these is a NoSQL database?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q33">Oracle</li>
+    <li><input type="checkbox" name="q33">MongoDB</li>
+    <li><input type="checkbox" name="q33">MySQL</li>
+    <li><input type="checkbox" name="q33">PostgreSQL</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">34. Which HTTP status represents “Not Found”?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q34">200</li>
+    <li><input type="checkbox" name="q34">500</li>
+    <li><input type="checkbox" name="q34">404</li>
+    <li><input type="checkbox" name="q34">301</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">35. Which tool is used to manage Java dependencies?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q35">Git</li>
+    <li><input type="checkbox" name="q35">Maven</li>
+    <li><input type="checkbox" name="q35">VS Code</li>
+    <li><input type="checkbox" name="q35">Chrome</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">36. In SQL, which clause is used with aggregate functions?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q36">WHERE</li>
+    <li><input type="checkbox" name="q36">GROUP BY</li>
+    <li><input type="checkbox" name="q36">ORDER BY</li>
+    <li><input type="checkbox" name="q36">SORT BY</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">37. Which is a microservices framework?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q37">Spring Boot</li>
+    <li><input type="checkbox" name="q37">CSS</li>
+    <li><input type="checkbox" name="q37">HTML</li>
+    <li><input type="checkbox" name="q37">Bootstrap</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">38. Which data type is used for true/false in Java?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q38">bool</li>
+    <li><input type="checkbox" name="q38">boolean</li>
+    <li><input type="checkbox" name="q38">bit</li>
+    <li><input type="checkbox" name="q38">logic</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">39. Which SQL command updates data?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q39">UPDATE</li>
+    <li><input type="checkbox" name="q39">MODIFY</li>
+    <li><input type="checkbox" name="q39">CHANGE</li>
+    <li><input type="checkbox" name="q39">SET</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">40. Which Java method runs a thread?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q40">start()</li>
+    <li><input type="checkbox" name="q40">runThread()</li>
+    <li><input type="checkbox" name="q40">execute()</li>
+    <li><input type="checkbox" name="q40">main()</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">41. Which Git command is used to download a repository?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q41">git start</li>
+    <li><input type="checkbox" name="q41">git clone</li>
+    <li><input type="checkbox" name="q41">git copy</li>
+    <li><input type="checkbox" name="q41">git fetch</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">42. Which Java keyword prevents inheritance?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q42">final</li>
+    <li><input type="checkbox" name="q42">static</li>
+    <li><input type="checkbox" name="q42">private</li>
+    <li><input type="checkbox" name="q42">lock</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">43. Which annotation in Spring Boot maps HTTP GET requests?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q43">@GetData</li>
+    <li><input type="checkbox" name="q43">@GetMapping</li>
+    <li><input type="checkbox" name="q43">@RequestGet</li>
+    <li><input type="checkbox" name="q43">@MapGet</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">44. In SQL, which operator is used for pattern matching?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q44">LIKE</li>
+    <li><input type="checkbox" name="q44">MATCH</li>
+    <li><input type="checkbox" name="q44">PATTERN</li>
+    <li><input type="checkbox" name="q44">SEARCH</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">45. Which protocol is secure version of HTTP?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q45">FTP</li>
+    <li><input type="checkbox" name="q45">HTTPS</li>
+    <li><input type="checkbox" name="q45">SFTP</li>
+    <li><input type="checkbox" name="q45">TCP</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">46. In Java, which collection follows FIFO?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q46">List</li>
+    <li><input type="checkbox" name="q46">Set</li>
+    <li><input type="checkbox" name="q46">Queue</li>
+    <li><input type="checkbox" name="q46">Map</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">47. What does CRUD stand for?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q47">Create Read Update Delete</li>
+    <li><input type="checkbox" name="q47">Copy Run Update Drop</li>
+    <li><input type="checkbox" name="q47">Create Remove Upload Download</li>
+    <li><input type="checkbox" name="q47">Check Replace Use Delete</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">48. Which Java keyword is used for abstraction?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q48">class</li>
+    <li><input type="checkbox" name="q48">abstract</li>
+    <li><input type="checkbox" name="q48">static</li>
+    <li><input type="checkbox" name="q48">void</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">49. Which SQL function returns number of rows?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q49">SUM()</li>
+    <li><input type="checkbox" name="q49">COUNT()</li>
+    <li><input type="checkbox" name="q49">MAX()</li>
+    <li><input type="checkbox" name="q49">ROWS()</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">50. What is the default port of HTTPS?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q50">21</li>
+    <li><input type="checkbox" name="q50">443</li>
+    <li><input type="checkbox" name="q50">80</li>
+    <li><input type="checkbox" name="q50">8080</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">51. Which keyword is used to define an interface in Java?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q51">interface</li>
+    <li><input type="checkbox" name="q51">implements</li>
+    <li><input type="checkbox" name="q51">abstract</li>
+    <li><input type="checkbox" name="q51">class</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">52. Which method is called first in a Java program?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q52">start()</li>
+    <li><input type="checkbox" name="q52">run()</li>
+    <li><input type="checkbox" name="q52">main()</li>
+    <li><input type="checkbox" name="q52">execute()</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">53. Which is NOT a Spring Boot annotation?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q53">@SpringBootApplication</li>
+    <li><input type="checkbox" name="q53">@Entity</li>
+    <li><input type="checkbox" name="q53">@Service</li>
+    <li><input type="checkbox" name="q53">@BodyParser</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">54. Which SQL command is used to remove duplicate records?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q54">UNIQUE</li>
+    <li><input type="checkbox" name="q54">DISTINCT</li>
+    <li><input type="checkbox" name="q54">REMOVE</li>
+    <li><input type="checkbox" name="q54">GROUP</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">55. What does JVM stand for?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q55">Java Virtual Machine</li>
+    <li><input type="checkbox" name="q55">Java Verified Mode</li>
+    <li><input type="checkbox" name="q55">Java Version Manager</li>
+    <li><input type="checkbox" name="q55">Java Virtual Memory</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">56. In REST API, which format is lightweight?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q56">DOC</li>
+    <li><input type="checkbox" name="q56">JSON</li>
+    <li><input type="checkbox" name="q56">XLS</li>
+    <li><input type="checkbox" name="q56">JPG</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">57. In Java, which block always executes?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q57">try</li>
+    <li><input type="checkbox" name="q57">catch</li>
+    <li><input type="checkbox" name="q57">finally</li>
+    <li><input type="checkbox" name="q57">throw</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">58. Which software is used to manage databases?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q58">DBMS</li>
+    <li><input type="checkbox" name="q58">CSS</li>
+    <li><input type="checkbox" name="q58">Bootstrap</li>
+    <li><input type="checkbox" name="q58">React</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">59. Which Java loop runs at least once?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q59">for</li>
+    <li><input type="checkbox" name="q59">while</li>
+    <li><input type="checkbox" name="q59">do-while</li>
+    <li><input type="checkbox" name="q59">none</li></div>
+</ul>
+
+<p [ngStyle]="{'color': questionColor}">60. Which type of testing checks individual components?</p>
+<ul><div class="box-body">
+    <li><input type="checkbox" name="q60">Integration Testing</li>
+    <li><input type="checkbox" name="q60">System Testing</li>
+    <li><input type="checkbox" name="q60">Unit Testing</li>
+    <li><input type="checkbox" name="q60">Load Testing</li></div>
+</ul>
+
+

@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'testing',component:TestingAssignmentComponent},
   {path:"ass",component:AssessmentplatformComponent},
   {path:"testlink",component:TestLinksComponent},
-  {path:"termsbox",component:TermsboxComponent}
+
   
 ];
 
