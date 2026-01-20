@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   title: string = 'Online Assessment for College Students';
   title1: string = 'Empowering Students with Skill-Based Evaluations';
@@ -18,22 +18,37 @@ export class HomeComponent implements OnInit {
   image2 = 'assets/homeImg/img4.jpg';
   image3 = 'assets/homeImg/img7.jpg';
 
+  private observer!: IntersectionObserver;
+
   constructor(private router: Router) {} 
 
   ngOnInit(): void {
-    
-    const reveals: NodeListOf<HTMLElement> = document.querySelectorAll('.section-animate');
 
-    window.addEventListener('scroll', () => {
-      reveals.forEach((el: HTMLElement) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible'); 
+          }
+        });
+      },
+      { threshold: 0.2 } 
+    );
 
-        if (elementTop < windowHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    });
+   
+    const elementsToAnimate = document.querySelectorAll(
+      '.section-animate, .slide-left, .slide-right'
+    );
+
+    elementsToAnimate.forEach(el => this.observer.observe(el));
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
   start() {

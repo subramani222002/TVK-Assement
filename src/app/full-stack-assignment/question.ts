@@ -1,4 +1,5 @@
 export const QUESTION_BANK = [
+    // =================== 1 - 10 ===================
     { id: 1, question: "Which technology is used to build the structure of a web page?", options: ["HTML", "CSS", "JavaScript", "Bootstrap"], correctAnswer: "HTML" },
     { id: 2, question: "Which CSS property controls text size?", options: ["font-style", "text-size", "font-size", "text-style"], correctAnswer: "font-size" },
     { id: 3, question: "Which tag is used to create a hyperlink in HTML?", options: ["<link>", "<a>", "<href>", "<nav>"], correctAnswer: "<a>" },
@@ -10,6 +11,7 @@ export const QUESTION_BANK = [
     { id: 9, question: "Which symbol is used for comments in CSS?", options: ["// comment", "none", "/* comment */", "# comment"], correctAnswer: "/* comment */" },
     { id: 10, question: "Which HTML tag is used to create an unordered list?", options: ["<ul>", "<ol>", "<li>", "<list>"], correctAnswer: "<ul>" },
 
+    // =================== 11 - 20 ===================
     { id: 11, question: "JavaScript is _________ language.", options: ["Programming", "Markup", "Style sheet", "Database"], correctAnswer: "Programming" },
     { id: 12, question: "Which method is used to print output in JavaScript?", options: ["cout()", "print()", "document.write()", "printf()"], correctAnswer: "document.write()" },
     { id: 13, question: "Inside which HTML element do we put JavaScript?", options: ["<js>", "<script>", "<javascript>", "<code>"], correctAnswer: "<script>" },
@@ -20,6 +22,8 @@ export const QUESTION_BANK = [
     { id: 18, question: "Which function is used to convert a string to an integer in JavaScript?", options: ["parseInt()", "Integer()", "toInt()", "stringToInt()"], correctAnswer: "parseInt()" },
     { id: 19, question: "Which tag is used to create a dropdown?", options: ["<input>", "<select>", "<dropdown>", "<option>"], correctAnswer: "<select>" },
     { id: 20, question: "Which command is used to initialize a new Git repository?", options: ["git start", "git init", "git new", "git create"], correctAnswer: "git init" },
+
+    // =================== 21 - 30 ===================
     { id: 21, question: "Which protocol is used to transfer web pages?", options: ["FTP", "SMTP", "HTTP", "IP"], correctAnswer: "HTTP" },
     { id: 22, question: "Which tag is used to create a line break?", options: ["<break>", "<lb>", "<br>", "<line>"], correctAnswer: "<br>" },
     { id: 23, question: "Which HTML tag is used to define a footer?", options: ["<bottom>", "<end>", "<footer>", "<foot>"], correctAnswer: "<footer>" },
@@ -31,6 +35,7 @@ export const QUESTION_BANK = [
     { id: 29, question: "Which Git command is used to check the current status?", options: ["git show", "git state", "git status", "git log"], correctAnswer: "git status" },
     { id: 30, question: "Which method is used to join two arrays in JavaScript?", options: ["add()", "join()", "concat()", "merge()"], correctAnswer: "concat()" },
 
+    // =================== 31 - 40 ===================
     { id: 31, question: "Which HTML tag is used for creating a form?", options: ["<form>", "<input>", "<table>", "<section>"], correctAnswer: "<form>" },
     { id: 32, question: "Which CSS property is used to set text alignment?", options: ["text-position", "alignment", "text-align", "position"], correctAnswer: "text-align" },
     { id: 33, question: "Which attribute is used to uniquely identify HTML elements?", options: ["class", "id", "name", "type"], correctAnswer: "id" },
@@ -42,6 +47,7 @@ export const QUESTION_BANK = [
     { id: 39, question: "Which HTML attribute specifies an alternate text for images?", options: ["alt", "title", "src", "text"], correctAnswer: "alt" },
     { id: 40, question: "Which CSS property controls the size of a margin?", options: ["margin-size", "margin", "spacing", "padding"], correctAnswer: "margin" },
 
+    // =================== 41 - 50 ===================
     { id: 41, question: "Which command is used to download a Git repository?", options: ["git save", "git copy", "git clone", "git get"], correctAnswer: "git clone" },
     { id: 42, question: "JavaScript runs on ______.", options: ["Server", "Browser", "Database", "Compiler"], correctAnswer: "Browser" },
     { id: 43, question: "Which tag is used to highlight text?", options: ["<highlight>", "<mark>", "<strong>", "<paint>"], correctAnswer: "<mark>" },
@@ -53,6 +59,7 @@ export const QUESTION_BANK = [
     { id: 49, question: "Which HTML attribute is used to define inline JavaScript?", options: ["js", "script", "onclick", "onexecute"], correctAnswer: "onclick" },
     { id: 50, question: "Which Git command shows commit history?", options: ["git history", "git commits", "git log", "git timeline"], correctAnswer: "git log" },
 
+    // =================== 51 - 60 ===================
     { id: 51, question: "Which CSS property sets the border width?", options: ["border-size", "border-width", "line-width", "border-style"], correctAnswer: "border-width" },
     { id: 52, question: "Which HTML tag defines emphasized text?", options: ["<em>", "<strong>", "<b>", "<i>"], correctAnswer: "<em>" },
     { id: 53, question: "Which JavaScript function returns array length?", options: ["length()", "size()", "count()", "arrayLength()"], correctAnswer: "length()" },

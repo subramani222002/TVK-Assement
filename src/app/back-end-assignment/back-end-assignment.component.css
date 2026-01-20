@@ -1,132 +1,16 @@
-.quiz-wrapper {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
+.main-container{
+    padding :20px;
 }
-
-.main-content {
-  flex: 1;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+.box-body{
+    display: grid;
+    grid-template-columns: repeat(2,0.2fr);
 }
-.header-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 20px;
-    margin: 0;
-    background-color: #eef3ff;
-    border-bottom: 1px solid rgb(175, 174, 174);
+h1{
+    text-align: center;
 }
-.username {
-    font-size: 18px;
-    font-weight: bold;
-    color: #007bff; 
+ul li{
+    list-style: none;
 }
-.nav-text {
-    cursor: pointer;
-    font-weight: bold;
-    margin: 0 5px;
-    color: #1976d2;
-}
-
-.nav-text:hover:not(.disabled) {
-    color: rgb(74, 74, 74);
-}
-
-.nav-text.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-.option-card input[type="radio"] {
-  transform: scale(1.4);   
-  accent-color: #007bff; 
-  cursor: pointer;
-}
-
-.right-panel {
-  width: 260px;
-  background: #eef3ff;
-  border: 1px solid #d0d7de;
-  border-radius: 10px;
-  padding: 15px;
-  height: 92vh;
-  overflow-y: auto;
-  position: sticky;
-  top: 0;
-}
-
-.right-panel h3 {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* Question Palette Buttons */
-.palette-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.palette-btn {
-  width: 40px;
-  height: 38px;
-  border-radius: 6px;
-  border: 1px solid #b0b0b0;
-  background: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.2s ease;
-}
-
-.palette-btn:hover {
-  transform: scale(1.07);
-}
-
-.not-visited { background: white; }
-.answered { background: green; color: white; }
-.marked { background: orange; }
-
-
-/* Question + Options Layout */
-.statement-box, .options-box {
-  margin-bottom: 20px;
-  width: 50%;
-}
-
-.option-card {
-  display: flex;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.option-card.selected {
-  border-color: #007bff;
-  background: #e6f0ff;
-}
-
-.bottom-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.btn {
-  padding: 8px 18px;
-  background: rgb(0, 63, 0);
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  border: none;
-}
-
-.btn.submit {
-  background: rgb(0, 0, 77);
+p{
+    font-size: 20px;
 }

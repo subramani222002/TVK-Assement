@@ -1,0 +1,99 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>User Registration</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" placeholder="Enter First Name" formControlName="firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" placeholder="Enter Last Name" formControlName="lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" formControlName="gender">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter Email" formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label for="mobileNo">Mobile Number</label>
+        <input id="mobileNo" type="text" placeholder="Enter Mobile Number" formControlName="mobileNo">
+      </div>
+
+      <div class="form-group">
+        <label for="native">Location</label>
+        <input id="native" type="text" placeholder="Enter Native Location" formControlName="native">
+      </div>
+
+     <div class="form-group">
+        <label for="tenth">10th Percentage</label>
+        <input id="tenth" type="number" placeholder="Enter 10th %" formControlName="tenth">
+      </div>
+
+      <div class="form-group">
+        <label for="twelfth">12th Percentage</label>
+        <input id="twelfth" type="number" placeholder="Enter 12th %" formControlName="twelfth">
+      </div>
+
+      <div class="form-group">
+        <label for="collegeName">College Name</label>
+        <input id="collegeName" type="text" placeholder="Enter College Name" formControlName="collegeName">
+      </div>
+      <div class="form-group">
+        <label for="degreeType">Degree</label>
+        <select id="degreeType" formControlName="degreeType">
+          <option value="">Select Degree</option>
+          <option value="BCA">BCA</option>
+          <option value="BSc CS">B.Sc</option>
+          <option value="BE">B.E</option>
+          <option value="BTech">B.Tech</option>
+          <option value="MCA">MCA</option>
+          <option value="MSc CS">M.Sc</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="degreeName">Degree Specialization</label>
+        <select id="degreeName" formControlName="degreeName">
+          <option value="">Select Specialization</option>
+
+          <option value="Computer Science">Computer Science</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Data Science">Data Science</option>
+          <option value="AI & ML">Artificial Intelligence & Machine Learning</option>
+          <option value="Cyber Security">Cyber Security</option>
+          <option value="Cloud Computing">Cloud Computing</option>
+          <option value="Networking">Networking</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="cgpa">CGPA (upto last sem)</label>
+        <input id="cgpa" type="number" step="0.01" placeholder="Enter CGPA" formControlName="cgpa">
+      </div>
+
+      <div class="form-group">
+        <label for="passedOut">Year of Passed Out</label>
+        <input id="passedOut" type="number" placeholder="Enter Passed Out Year" formControlName="passedOut">
+      </div>
+
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
