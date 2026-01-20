@@ -19,14 +19,19 @@ constructor(private router:Router){}
       this.warnmsg='';
     }
   }
-gotoTests(){
-const checkbox: any = document.getElementById('agree');
+gotoTests() {
+  const checkbox: any = document.getElementById('agree');
 
-  if(!checkbox.checked){
-    this.warnmsg="⚠️ Please agree to the Terms & Conditions before continuing! 👆"
+  if (!checkbox.checked) {
+    this.warnmsg = "⚠️ Please agree to the Terms & Conditions before continuing! 👆";
     return;
   }
-  this.warnmsg = ""
-  this.router.navigate(['/testlink'])
+
+  this.warnmsg = "";
+
+  this.router.navigate(['/register']).then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
+
 }

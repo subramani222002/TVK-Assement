@@ -16,6 +16,7 @@ import { PythonAssignmentComponent } from './python-assignment/python-assignment
 import { TestingAssignmentComponent } from './testing-assignment/testing-assignment.component';
 import { TestLinksComponent } from './test-links/test-links.component';
 import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AssessmentplatformComponent } from './assessmentplatform/assessmentplat
     JavaAssignmentComponent,
     PythonAssignmentComponent,
     TestingAssignmentComponent,
-    TestLinksComponent
+    TestLinksComponent,
+    RegisterComponent  
   ],
   imports: [
     BrowserModule,

@@ -11,10 +11,12 @@ import { TestingAssignmentComponent } from './testing-assignment/testing-assignm
 import { AssessmentplatformComponent } from './assessmentplatform/assessmentplatform.component';
 import { TestLinksComponent } from './test-links/test-links.component';
 import { TermsboxComponent } from './termsbox/termsbox.component';
+import { RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   { path: 'contact', component: ContactComponent },
    {path:'',component:HomeComponent},
+   {path:'register', component:RegisterComponent},
    {path:'fullstack',component:FullStackAssignmentComponent},
   {path:'frontend',component:FrontEndAssignmentComponent},
   {path:'backend',component:BackEndAssignmentComponent},

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "0a71",
+      "firstName": "deepa",
+      "lastName": "g",
+      "fatherName": "gomu",
+      "email": "deepa@gmail.com",
+      "password": "1234567890",
+      "department": "IT",
+      "address": "xyz street",
+      "mobileNo": "9878909878"
+    },
+    {
+      "id": "f8da",
+      "firstName": "deepa",
+      "lastName": "g",
+      "fatherName": "gomu",
+      "email": "deepa@gmail.com",
+      "password": "1234567890",
+      "department": "IT",
+      "address": "xyz street",
+      "mobileNo": "9878909878"
+    },
+    {
+      "id": "4b41",
+      "firstName": "chandhana",
+      "lastName": "Nalla",
+      "fatherName": "Reddy",
+      "email": "chandhana@gmail.com",
+      "department": "IT",
+      "mobileNo": "9087678909"
+    },
+    {
+      "id": "9a88",
+      "firstName": "chandhana",
+      "lastName": "Nalla",
+      "fatherName": "Reddy",
+      "email": "chandhana@gmail.com",
+      "department": "IT",
+      "mobileNo": "9087678909"
+    }
+  ]
+}
